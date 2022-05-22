@@ -1,0 +1,201 @@
+Lab 3 ADiSS
+
+Zadanie 3
+i. Dziadków płci męskiej za pomocą relacji hasGrandparent
+
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX onto: <http://a.com/ontology#>
+SELECT DISTINCT *
+	WHERE {
+?subject onto:hasGrandparent?object.
+FILTER EXISTS {?object a onto:Man .}
+}
+
+ii. Wszystkie kuzynki osoby M20
+
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX onto: <http://a.com/ontology#>
+SELECT ?subject  ?object
+	WHERE { 
+?subject onto:hasCousin ?object 
+
+FILTER regex(str(?subject), "M20")
+FILTER regex(str(?object), "F")
+
+}
+
+iii. Wszystkich męskich kuzynów osoby M20
+
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX onto: <http://a.com/ontology#>
+SELECT ?subject  ?object
+	WHERE { 
+?subject onto:hasCousin ?object 
+
+FILTER regex(str(?subject), "M20")
+FILTER regex(str(?object), "M")
+
+}
+
+iv. Małżeństw, które spłodziły 2 córki
+
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX onto: <http://a.com/ontology#>
+SELECT *
+	WHERE { 
+?x onto:hasSister  ?y .
+?y onto:hasParent?malzenstwa .
+FILTER regex(str(?x), "F")
+}
+Order by ?x
+
+v. Małżeństw, które spłodziły zarówno kobietę jak i mężczyznę
+
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX onto: <http://a.com/ontology#>
+SELECT *
+	WHERE { 
+?x onto:hasBrother  ?y .
+?y onto:hasParent?malzenstwa .
+FILTER regex(str(?x), "F")
+}
+Order by ?x
+
+vi. Następującego łańcucha: wnuk–dziadek–prababcia, w odpowiedzi należy dodatkowo zwrócić nazwę klasy (typ instancji) oraz wartość relacji hasSex dla każdej z uzyskanych instancji
+
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX onto: <http://a.com/ontology#>
+SELECT *
+	WHERE { 
+?wnuk onto:hasGrandfather ?dziadek.
+?dziadek onto:hasMother ?prababcia .
+FILTER regex(str(?wnuk), "M")
+}
+#Order by ?x
+
+vii. Wszystkich możliwych informacji o obiekcie M20
+
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX onto: <http://a.com/ontology#>
+DESCRIBE ?subject
+{
+?subject onto:hasChild onto:M32 .
+FILTER regex(str(?subject), "M20")
+
+}
+
+viii. Wszystkich relacji, które łączą się tzw. blank node – wynik musi wyświetlać całe trójki
+
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX onto: <http://a.com/ontology#>
+SELECT *
+	WHERE
+{
+?x onto:hasChild [rdf:type ?y]
+
+}
+
+ix. Wszystkie kobiety, które mają syna, a nie mają córki (Wskazówka: wykorzystać komendy bound i OPTIONAL)
+
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX onto: <http://a.com/ontology#>
+SELECT *
+{
+ ?x onto:hasChild ?y 
+FILTER regex(str(?x), "F")
+FILTER NOT EXISTS {?x onto:hasDaughter ?z }
+}
+
+x. Linie męskich potomków (mężczyzna-mężczyzna-...-mężczyzna) – wykorzystać komendę OPTIONAL
+
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX onto: <http://a.com/ontology#>
+SELECT *
+{
+OPTIONAL
+{
+?x onto:hasFather ?y .
+?y onto:hasFather ?z .
+?z onto:hasFather ?q .
+?x rdf:type onto:Man
+}
+}
+
+xi. Osób będących „liśćmi” w przedstawionym na rysunku 1 drzewie (ostatni poziom: F30,F31, . . . )
+
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX onto: <http://a.com/ontology#>
+SELECT DISTINCT ?liscie_drzewa
+	WHERE
+{
+?liscie_drzewa onto:hasGreatgrandparent ?y .
+
+}
+ORDER by ?x
+
+xii. Osób znajdujących się na poziomie 1 (M13, F10, F11, . . . )
+
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX onto: <http://a.com/ontology#>
+SELECT *
+	WHERE
+{
+?x a onto:Person .
+FILTER (regex(str(?x), "F1") || regex(str(?x), "M1"))
+}
+ORDER by ?x
+
+xiii. Osób znajdujących się na poziomie 1, ale rezultaty zostają ograniczone do drugiej czwórki wyników (F12, M11, M12 i F13 )
+
+
+
+xiv. Wszystkich kobiet poprzez analizę nazwy obiektu (np. F10, gdzie F to Female)
+
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX onto: <http://a.com/ontology#>
+SELECT *
+	WHERE
+{
+?x a onto:Person .
+FILTER (regex(str(?x), "F"))
+}
+ORDER by ?x

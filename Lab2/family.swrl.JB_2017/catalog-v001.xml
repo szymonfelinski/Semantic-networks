@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<catalog prefer="public" xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog">
+    <group id="Folder Repository, directory=, recursive=true, Auto-Update=true, version=2" prefer="public" xml:base="">
+        <uri id="Automatically generated entry, Timestamp=1648461780221" name="http://a.com/ontology" uri="family.swrl.JB_2017.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1648461780221" name="http://protege.stanford.edu/plugins/owl/OWLProfiles.owl" uri="OWLProfiles.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1648461780221" name="http://protege.stanford.edu/plugins/owl/protege" uri="protege.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1648461780221" name="http://swrl.stanford.edu/ontologies/3.3/swrla.owl" uri="swrla.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1648461780221" name="http://swrl.stanford.edu/ontologies/built-ins/3.3/abox.owl" uri="abox.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1648461780221" name="http://swrl.stanford.edu/ontologies/built-ins/3.3/query.owl" uri="query.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1648461780221" name="http://swrl.stanford.edu/ontologies/built-ins/3.3/swrlx.owl" uri="swrlx.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1648461780221" name="http://swrl.stanford.edu/ontologies/built-ins/3.3/tbox.owl" uri="tbox.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1648461780221" name="http://swrl.stanford.edu/ontologies/built-ins/3.3/temporal.owl" uri="temporal.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1648461780221" name="http://www.owl-ontologies.com/2005/08/07/xsp.owl" uri="xsp.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1648461780221" name="http://www.owl-ontologies.com/assert.owl" uri="assert.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1648461780221" name="http://www.owl-ontologies.com/forms/absolute.owl" uri="absolute.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1648461780221" name="http://www.owl-ontologies.com/forms/forms.owl" uri="forms.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1648461780221" name="http://www.owl-ontologies.com/forms/protege.owl" uri="protegeForms.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1648461780221" name="http://www.w3.org/2003/11/swrl" uri="swrl.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1648461780221" name="http://www.w3.org/2003/11/swrlb" uri="swrlb.owl"/>
+    </group>
+</catalog>

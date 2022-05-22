@@ -1,0 +1,305 @@
+@prefix : <http://example.com/myOntology#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <http://example.com/myOntology> .
+
+<http://example.com/myOntology> rdf:type owl:Ontology .
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://example.com/myOntology#hasActor
+:hasActor rdf:type owl:ObjectProperty ;
+          owl:inverseOf :isActorIn ;
+          rdfs:domain :Movie ;
+          rdfs:range :Actor .
+
+
+###  http://example.com/myOntology#hasActress
+:hasActress rdf:type owl:ObjectProperty ;
+            rdfs:subPropertyOf :hasActor .
+
+
+###  http://example.com/myOntology#hasDirector
+:hasDirector rdf:type owl:ObjectProperty ;
+             owl:inverseOf :isDirectorIn ;
+             rdfs:domain :Movie ;
+             rdfs:range :Director .
+
+
+###  http://example.com/myOntology#hasMaleActor
+:hasMaleActor rdf:type owl:ObjectProperty ;
+              rdfs:subPropertyOf :hasActor .
+
+
+###  http://example.com/myOntology#hasSex
+:hasSex rdf:type owl:ObjectProperty .
+
+
+###  http://example.com/myOntology#isActorIn
+:isActorIn rdf:type owl:ObjectProperty ;
+           rdfs:subPropertyOf owl:topObjectProperty .
+
+
+###  http://example.com/myOntology#isDirectorIn
+:isDirectorIn rdf:type owl:ObjectProperty ;
+              rdfs:domain :Director ;
+              rdfs:range :Movie .
+
+
+###  http://example.com/myOntology#likeEachOther
+:likeEachOther rdf:type owl:ObjectProperty ;
+               rdfs:subPropertyOf owl:topObjectProperty ;
+               rdf:type owl:SymmetricProperty .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  http://example.com/myOntology#hasAge
+:hasAge rdf:type owl:DatatypeProperty ;
+        rdfs:subPropertyOf owl:topDataProperty ;
+        rdfs:domain :Person .
+
+
+###  http://example.com/myOntology#hasName
+:hasName rdf:type owl:DatatypeProperty ;
+         rdfs:domain :Person .
+
+
+###  http://example.com/myOntology#hasTitle
+:hasTitle rdf:type owl:DatatypeProperty ;
+          rdfs:domain :Art .
+
+
+###  http://example.com/myOntology#producedInYear
+:producedInYear rdf:type owl:DatatypeProperty ;
+                rdfs:domain :Art .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://example.com/myOntology#Actor
+:Actor rdf:type owl:Class ;
+       rdfs:subClassOf :Person .
+
+
+###  http://example.com/myOntology#Art
+:Art rdf:type owl:Class .
+
+
+###  http://example.com/myOntology#Director
+:Director rdf:type owl:Class ;
+          rdfs:subClassOf :Person .
+
+
+###  http://example.com/myOntology#Gender
+:Gender rdf:type owl:Class .
+
+
+###  http://example.com/myOntology#Movie
+:Movie rdf:type owl:Class ;
+       rdfs:subClassOf :Art .
+
+
+###  http://example.com/myOntology#Person
+:Person rdf:type owl:Class .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  http://example.com/myOntology#Female
+:Female rdf:type owl:NamedIndividual ,
+                 :Gender .
+
+
+###  http://example.com/myOntology#Male
+:Male rdf:type owl:NamedIndividual ,
+               :Gender .
+
+
+###  http://example.com/myOntology#nm0000136
+:nm0000136 rdf:type owl:NamedIndividual ,
+                    :Actor ;
+           :hasSex :Male ;
+           :isActorIn :tt0325980 ;
+           :hasAge "58"^^xsd:int ;
+           :hasName "Johnny Depp"^^xsd:string .
+
+
+###  http://example.com/myOntology#nm0000353
+:nm0000353 rdf:type owl:NamedIndividual ,
+                    :Actor ;
+           :hasSex :Male ;
+           :hasAge "66"^^xsd:int ;
+           :hasName "Willem Dafoe"^^xsd:string .
+
+
+###  http://example.com/myOntology#nm0000463
+:nm0000463 rdf:type owl:NamedIndividual ,
+                    :Actor ;
+           :hasSex :Female ;
+           :hasAge "57"^^xsd:int ;
+           :hasName "Famke Janssen"^^xsd:string .
+
+
+###  http://example.com/myOntology#nm0000719
+:nm0000719 rdf:type owl:NamedIndividual ,
+                    :Actor ;
+           :hasSex :Male ;
+           :hasAge "82"^^xsd:int ;
+           :hasName "F. Murray Abraham"^^xsd:string .
+
+
+###  http://example.com/myOntology#nm0001122
+:nm0001122 rdf:type owl:NamedIndividual ,
+                    :Actor ;
+           :hasSex :Female ;
+           :hasAge "64"^^xsd:int ;
+           :hasName "Ellen DeGeneres"^^xsd:string .
+
+
+###  http://example.com/myOntology#nm0001232
+:nm0001232 rdf:type owl:NamedIndividual ,
+                    :Director ;
+           :hasSex :Male ;
+           :hasAge "86"^^xsd:int ;
+           :hasName "Milos Forman"^^xsd:string .
+
+
+###  http://example.com/myOntology#nm0001371
+:nm0001371 rdf:type owl:NamedIndividual ,
+                    :Actor ;
+           :hasSex :Male ;
+           :hasAge "69"^^xsd:int ;
+           :hasName "Tom Hulce"^^xsd:string .
+
+
+###  http://example.com/myOntology#nm0001691
+:nm0001691 rdf:type owl:NamedIndividual ,
+                    :Actor ;
+           :hasSex :Male ;
+           :isActorIn :tt0325980 ;
+           :hasAge "71"^^xsd:int ;
+           :hasName "Geoffrey Rush"^^xsd:string .
+
+
+###  http://example.com/myOntology#nm0001741
+:nm0001741 rdf:type owl:NamedIndividual ,
+                    :Director ;
+           :hasSex :Male ;
+           :hasAge "56"^^xsd:int ;
+           :hasName "Bryan Singer"^^xsd:string .
+
+
+###  http://example.com/myOntology#nm0004056
+:nm0004056 rdf:type owl:NamedIndividual ,
+                    :Director ;
+           :hasSex :Male ;
+           :isDirectorIn :tt0266543 ;
+           :hasAge "56"^^xsd:int ;
+           :hasName "Andrew Stanton"^^xsd:string .
+
+
+###  http://example.com/myOntology#nm0004303
+:nm0004303 rdf:type owl:NamedIndividual ,
+                    :Director ;
+           :hasSex :Male ;
+           :isDirectorIn :tt0458525 ;
+           :likeEachOther :nm0000353 ;
+           :hasAge "58"^^xsd:int ;
+           :hasName "Gavin Hood"^^xsd:string .
+
+
+###  http://example.com/myOntology#nm0413168
+:nm0413168 rdf:type owl:NamedIndividual ,
+                    :Actor ;
+           :hasSex :Male ;
+           :hasAge "53"^^xsd:int ;
+           :hasName "Hugh Jackman"^^xsd:string .
+
+
+###  http://example.com/myOntology#nm0881279
+:nm0881279 rdf:type owl:NamedIndividual ,
+                    :Director ;
+           :hasSex :Male ;
+           :isDirectorIn :tt0266543 ;
+           :likeEachOther :nm0004056 ;
+           :hasAge "54"^^xsd:int ;
+           :hasName "Lee Unkrich"^^xsd:string .
+
+
+###  http://example.com/myOntology#nm0893659
+:nm0893659 rdf:type owl:NamedIndividual ,
+                    :Director ;
+           :hasSex :Male ;
+           :hasAge "58"^^xsd:int ;
+           :hasName "Gore Verbinsky"^^xsd:string .
+
+
+###  http://example.com/myOntology#tt0086879
+:tt0086879 rdf:type owl:NamedIndividual ,
+                    :Movie ;
+           :hasDirector :nm0001232 ;
+           :hasMaleActor :nm0000719 ,
+                         :nm0001371 ;
+           :hasTitle "Amadeus"^^xsd:string ;
+           :producedInYear "1984"^^xsd:int .
+
+
+###  http://example.com/myOntology#tt0120903
+:tt0120903 rdf:type owl:NamedIndividual ,
+                    :Movie ;
+           :hasActress :nm0000463 ;
+           :hasDirector :nm0001741 ;
+           :hasMaleActor :nm0413168 ;
+           :hasTitle "X-Men"^^xsd:string ;
+           :producedInYear "2000"^^xsd:int .
+
+
+###  http://example.com/myOntology#tt0266543
+:tt0266543 rdf:type owl:NamedIndividual ,
+                    :Movie ;
+           :hasActress :nm0001122 ;
+           :hasMaleActor :nm0000353 ;
+           :hasTitle "Finding Nemo"^^xsd:string ;
+           :producedInYear "2003"^^xsd:int .
+
+
+###  http://example.com/myOntology#tt0325980
+:tt0325980 rdf:type owl:NamedIndividual ,
+                    :Movie ;
+           :hasDirector :nm0893659 ;
+           :hasTitle "Pirates of the Caribbean: The Curse of the Black Pearl"^^xsd:string ;
+           :producedInYear "2003"^^xsd:int .
+
+
+###  http://example.com/myOntology#tt0458525
+:tt0458525 rdf:type owl:NamedIndividual ,
+                    :Movie ;
+           :hasMaleActor :nm0413168 ;
+           :hasName "X-Men Origins: Wolverine"^^xsd:string ;
+           :producedInYear "2009"^^xsd:int .
+
+
+#################################################################
+#    General axioms
+#################################################################
+
+[ rdf:type owl:AllDifferent ;
+  owl:distinctMembers ( :Female
+                        :Male
+                      )
+] .
+
+
+###  Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi

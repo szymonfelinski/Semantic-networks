@@ -1,0 +1,3011 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://a.com/ontology#"
+     xml:base="http://a.com/ontology"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:abox="http://swrl.stanford.edu/ontologies/built-ins/3.3/abox.owl#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:swrl="http://www.w3.org/2003/11/swrl#"
+     xmlns:tbox="http://swrl.stanford.edu/ontologies/built-ins/3.3/tbox.owl#"
+     xmlns:query="http://swrl.stanford.edu/ontologies/built-ins/3.3/query.owl#"
+     xmlns:swlrx="http://swrl.stanford.edu/ontologies/built-ins/3.3/swrlx.owl#"
+     xmlns:swrla="http://swrl.stanford.edu/ontologies/3.3/swrla.owl#"
+     xmlns:swrlb="http://www.w3.org/2003/11/swrlb#"
+     xmlns:temporal="http://swrl.stanford.edu/ontologies/built-ins/3.3/temporal.owl#"
+     xmlns:ace_lexicon="http://attempto.ifi.uzh.ch/ace_lexicon#">
+    <owl:Ontology rdf:about="http://a.com/ontology">
+        <owl:imports rdf:resource="http://swrl.stanford.edu/ontologies/3.3/swrla.owl"/>
+        <owl:imports rdf:resource="http://swrl.stanford.edu/ontologies/built-ins/3.3/abox.owl"/>
+        <owl:imports rdf:resource="http://swrl.stanford.edu/ontologies/built-ins/3.3/query.owl"/>
+        <owl:imports rdf:resource="http://swrl.stanford.edu/ontologies/built-ins/3.3/swrlx.owl"/>
+        <owl:imports rdf:resource="http://swrl.stanford.edu/ontologies/built-ins/3.3/tbox.owl"/>
+        <owl:imports rdf:resource="http://swrl.stanford.edu/ontologies/built-ins/3.3/temporal.owl"/>
+        <owl:imports rdf:resource="http://www.w3.org/2003/11/swrl"/>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl -->
+
+    <owl:AnnotationProperty rdf:about="http://attempto.ifi.uzh.ch/ace_lexicon#CN_pl"/>
+    
+
+
+    <!-- http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg -->
+
+    <owl:AnnotationProperty rdf:about="http://attempto.ifi.uzh.ch/ace_lexicon#CN_sg"/>
+    
+
+
+    <!-- http://attempto.ifi.uzh.ch/ace_lexicon#PN_sg -->
+
+    <owl:AnnotationProperty rdf:about="http://attempto.ifi.uzh.ch/ace_lexicon#PN_sg"/>
+    
+
+
+    <!-- http://attempto.ifi.uzh.ch/ace_lexicon#TV_pl -->
+
+    <owl:AnnotationProperty rdf:about="http://attempto.ifi.uzh.ch/ace_lexicon#TV_pl"/>
+    
+
+
+    <!-- http://attempto.ifi.uzh.ch/ace_lexicon#TV_sg -->
+
+    <owl:AnnotationProperty rdf:about="http://attempto.ifi.uzh.ch/ace_lexicon#TV_sg"/>
+    
+
+
+    <!-- http://attempto.ifi.uzh.ch/ace_lexicon#TV_vbg -->
+
+    <owl:AnnotationProperty rdf:about="http://attempto.ifi.uzh.ch/ace_lexicon#TV_vbg"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://a.com/ontology#HappyGrandpa -->
+
+    <owl:ObjectProperty rdf:about="http://a.com/ontology#HappyGrandpa">
+        <rdfs:domain rdf:resource="http://a.com/ontology#Person"/>
+        <rdfs:range rdf:resource="http://a.com/ontology#Man"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://a.com/ontology#hasAunt -->
+
+    <owl:ObjectProperty rdf:about="http://a.com/ontology#hasAunt">
+        <rdfs:domain rdf:resource="http://a.com/ontology#Person"/>
+        <rdfs:range rdf:resource="http://a.com/ontology#Woman"/>
+        <ace_lexicon:TV_pl>hasAunt</ace_lexicon:TV_pl>
+        <ace_lexicon:TV_sg>hasAunts</ace_lexicon:TV_sg>
+        <ace_lexicon:TV_vbg>hasAunted</ace_lexicon:TV_vbg>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://a.com/ontology#hasBrother -->
+
+    <owl:ObjectProperty rdf:about="http://a.com/ontology#hasBrother">
+        <owl:equivalentProperty rdf:resource="http://a.com/ontology#maBrata"/>
+        <rdfs:subPropertyOf rdf:resource="http://a.com/ontology#hasSibling"/>
+        <rdfs:domain rdf:resource="http://a.com/ontology#Person"/>
+        <rdfs:range rdf:resource="http://a.com/ontology#Man"/>
+        <ace_lexicon:TV_pl>hasBrother</ace_lexicon:TV_pl>
+        <ace_lexicon:TV_sg>hasBrothers</ace_lexicon:TV_sg>
+        <ace_lexicon:TV_vbg>hasBrothered</ace_lexicon:TV_vbg>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://a.com/ontology#hasChild -->
+
+    <owl:ObjectProperty rdf:about="http://a.com/ontology#hasChild">
+        <owl:inverseOf rdf:resource="http://a.com/ontology#hasParent"/>
+        <rdfs:domain rdf:resource="http://a.com/ontology#Person"/>
+        <rdfs:range rdf:resource="http://a.com/ontology#Person"/>
+        <ace_lexicon:TV_pl>hasChild</ace_lexicon:TV_pl>
+        <ace_lexicon:TV_sg>hasChilds</ace_lexicon:TV_sg>
+        <ace_lexicon:TV_vbg>hasChilded</ace_lexicon:TV_vbg>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://a.com/ontology#hasConsort -->
+
+    <owl:ObjectProperty rdf:about="http://a.com/ontology#hasConsort">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#SymmetricProperty"/>
+        <rdfs:domain rdf:resource="http://a.com/ontology#Person"/>
+        <rdfs:range rdf:resource="http://a.com/ontology#Person"/>
+        <ace_lexicon:TV_pl>hasConsort</ace_lexicon:TV_pl>
+        <ace_lexicon:TV_sg>hasConsorts</ace_lexicon:TV_sg>
+        <ace_lexicon:TV_vbg>hasConsorted</ace_lexicon:TV_vbg>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://a.com/ontology#hasCousin -->
+
+    <owl:ObjectProperty rdf:about="http://a.com/ontology#hasCousin">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#SymmetricProperty"/>
+        <rdfs:domain rdf:resource="http://a.com/ontology#Person"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://a.com/ontology#hasDaughter -->
+
+    <owl:ObjectProperty rdf:about="http://a.com/ontology#hasDaughter">
+        <rdfs:subPropertyOf rdf:resource="http://a.com/ontology#hasChild"/>
+        <rdfs:domain rdf:resource="http://a.com/ontology#Person"/>
+        <rdfs:range rdf:resource="http://a.com/ontology#Woman"/>
+        <ace_lexicon:TV_pl>hasDaughter</ace_lexicon:TV_pl>
+        <ace_lexicon:TV_sg>hasDaughters</ace_lexicon:TV_sg>
+        <ace_lexicon:TV_vbg>hasDaughtered</ace_lexicon:TV_vbg>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://a.com/ontology#hasFather -->
+
+    <owl:ObjectProperty rdf:about="http://a.com/ontology#hasFather">
+        <rdfs:subPropertyOf rdf:resource="http://a.com/ontology#hasParent"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://a.com/ontology#Person"/>
+        <rdfs:range rdf:resource="http://a.com/ontology#Man"/>
+        <ace_lexicon:TV_pl>hasFather</ace_lexicon:TV_pl>
+        <ace_lexicon:TV_sg>hasFathers</ace_lexicon:TV_sg>
+        <ace_lexicon:TV_vbg>hasFathered</ace_lexicon:TV_vbg>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://a.com/ontology#hasGrandfather -->
+
+    <owl:ObjectProperty rdf:about="http://a.com/ontology#hasGrandfather">
+        <rdfs:subPropertyOf rdf:resource="http://a.com/ontology#hasGrandparent"/>
+        <rdfs:domain rdf:resource="http://a.com/ontology#Person"/>
+        <rdfs:range rdf:resource="http://a.com/ontology#Man"/>
+        <ace_lexicon:TV_pl>hasGrandfather</ace_lexicon:TV_pl>
+        <ace_lexicon:TV_sg>hasGrandfathers</ace_lexicon:TV_sg>
+        <ace_lexicon:TV_vbg>hasGrandfathered</ace_lexicon:TV_vbg>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://a.com/ontology#hasGrandmother -->
+
+    <owl:ObjectProperty rdf:about="http://a.com/ontology#hasGrandmother">
+        <rdfs:subPropertyOf rdf:resource="http://a.com/ontology#hasGrandparent"/>
+        <rdfs:domain rdf:resource="http://a.com/ontology#Person"/>
+        <rdfs:range rdf:resource="http://a.com/ontology#Woman"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://a.com/ontology#hasGrandparent -->
+
+    <owl:ObjectProperty rdf:about="http://a.com/ontology#hasGrandparent"/>
+    
+
+
+    <!-- http://a.com/ontology#hasGreatgrandfather -->
+
+    <owl:ObjectProperty rdf:about="http://a.com/ontology#hasGreatgrandfather">
+        <rdfs:subPropertyOf rdf:resource="http://a.com/ontology#hasGreatgrandparent"/>
+        <rdfs:domain rdf:resource="http://a.com/ontology#Person"/>
+        <rdfs:range rdf:resource="http://a.com/ontology#Man"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://a.com/ontology#hasGreatgrandmother -->
+
+    <owl:ObjectProperty rdf:about="http://a.com/ontology#hasGreatgrandmother">
+        <rdfs:subPropertyOf rdf:resource="http://a.com/ontology#hasGreatgrandparent"/>
+        <rdfs:domain rdf:resource="http://a.com/ontology#Person"/>
+        <rdfs:range rdf:resource="http://a.com/ontology#Woman"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://a.com/ontology#hasGreatgrandparent -->
+
+    <owl:ObjectProperty rdf:about="http://a.com/ontology#hasGreatgrandparent"/>
+    
+
+
+    <!-- http://a.com/ontology#hasMother -->
+
+    <owl:ObjectProperty rdf:about="http://a.com/ontology#hasMother">
+        <rdfs:subPropertyOf rdf:resource="http://a.com/ontology#hasParent"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://a.com/ontology#Person"/>
+        <rdfs:range rdf:resource="http://a.com/ontology#Woman"/>
+        <ace_lexicon:TV_pl>hasMother</ace_lexicon:TV_pl>
+        <ace_lexicon:TV_sg>hasMothers</ace_lexicon:TV_sg>
+        <ace_lexicon:TV_vbg>hasMothered</ace_lexicon:TV_vbg>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://a.com/ontology#hasNephew -->
+
+    <owl:ObjectProperty rdf:about="http://a.com/ontology#hasNephew">
+        <rdfs:domain rdf:resource="http://a.com/ontology#Person"/>
+        <rdfs:range rdf:resource="http://a.com/ontology#Man"/>
+        <ace_lexicon:TV_pl>hasNephew</ace_lexicon:TV_pl>
+        <ace_lexicon:TV_sg>hasNephews</ace_lexicon:TV_sg>
+        <ace_lexicon:TV_vbg>hasNephewed</ace_lexicon:TV_vbg>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://a.com/ontology#hasNiece -->
+
+    <owl:ObjectProperty rdf:about="http://a.com/ontology#hasNiece">
+        <rdfs:domain rdf:resource="http://a.com/ontology#Person"/>
+        <rdfs:range rdf:resource="http://a.com/ontology#Woman"/>
+        <ace_lexicon:TV_pl>hasNiece</ace_lexicon:TV_pl>
+        <ace_lexicon:TV_sg>hasNieces</ace_lexicon:TV_sg>
+        <ace_lexicon:TV_vbg>hasNieced</ace_lexicon:TV_vbg>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://a.com/ontology#hasParent -->
+
+    <owl:ObjectProperty rdf:about="http://a.com/ontology#hasParent">
+        <rdfs:domain rdf:resource="http://a.com/ontology#Person"/>
+        <rdfs:range rdf:resource="http://a.com/ontology#Person"/>
+        <ace_lexicon:TV_pl>hasParent</ace_lexicon:TV_pl>
+        <ace_lexicon:TV_sg>hasParents</ace_lexicon:TV_sg>
+        <ace_lexicon:TV_vbg>hasParented</ace_lexicon:TV_vbg>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://a.com/ontology#hasSex -->
+
+    <owl:ObjectProperty rdf:about="http://a.com/ontology#hasSex">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://a.com/ontology#Person"/>
+        <rdfs:range rdf:resource="http://a.com/ontology#Gender"/>
+        <ace_lexicon:TV_pl>hasSex</ace_lexicon:TV_pl>
+        <ace_lexicon:TV_sg>hasSexes</ace_lexicon:TV_sg>
+        <ace_lexicon:TV_vbg>hasSexed</ace_lexicon:TV_vbg>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://a.com/ontology#hasSibling -->
+
+    <owl:ObjectProperty rdf:about="http://a.com/ontology#hasSibling">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#SymmetricProperty"/>
+        <rdfs:domain rdf:resource="http://a.com/ontology#Person"/>
+        <rdfs:range rdf:resource="http://a.com/ontology#Person"/>
+        <ace_lexicon:TV_pl>hasSibling</ace_lexicon:TV_pl>
+        <ace_lexicon:TV_sg>hasSiblings</ace_lexicon:TV_sg>
+        <ace_lexicon:TV_vbg>hasSiblinged</ace_lexicon:TV_vbg>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://a.com/ontology#hasSister -->
+
+    <owl:ObjectProperty rdf:about="http://a.com/ontology#hasSister">
+        <owl:equivalentProperty rdf:resource="http://a.com/ontology#maSiostre"/>
+        <rdfs:subPropertyOf rdf:resource="http://a.com/ontology#hasSibling"/>
+        <rdfs:domain rdf:resource="http://a.com/ontology#Person"/>
+        <rdfs:range rdf:resource="http://a.com/ontology#Woman"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://a.com/ontology#hasSon -->
+
+    <owl:ObjectProperty rdf:about="http://a.com/ontology#hasSon">
+        <rdfs:subPropertyOf rdf:resource="http://a.com/ontology#hasChild"/>
+        <rdfs:domain rdf:resource="http://a.com/ontology#Person"/>
+        <rdfs:range rdf:resource="http://a.com/ontology#Man"/>
+        <ace_lexicon:TV_pl>hasSon</ace_lexicon:TV_pl>
+        <ace_lexicon:TV_sg>hasSons</ace_lexicon:TV_sg>
+        <ace_lexicon:TV_vbg>hasSoned</ace_lexicon:TV_vbg>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://a.com/ontology#hasUncle -->
+
+    <owl:ObjectProperty rdf:about="http://a.com/ontology#hasUncle">
+        <rdfs:domain rdf:resource="http://a.com/ontology#Person"/>
+        <rdfs:range rdf:resource="http://a.com/ontology#Man"/>
+        <ace_lexicon:TV_pl>hasUncle</ace_lexicon:TV_pl>
+        <ace_lexicon:TV_sg>hasUncles</ace_lexicon:TV_sg>
+        <ace_lexicon:TV_vbg>hasUncled</ace_lexicon:TV_vbg>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://a.com/ontology#maBrata -->
+
+    <owl:ObjectProperty rdf:about="http://a.com/ontology#maBrata">
+        <rdfs:domain rdf:resource="http://a.com/ontology#Person"/>
+        <rdfs:range rdf:resource="http://a.com/ontology#Man"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://a.com/ontology#maSiostre -->
+
+    <owl:ObjectProperty rdf:about="http://a.com/ontology#maSiostre">
+        <rdfs:domain rdf:resource="http://a.com/ontology#Person"/>
+        <rdfs:range rdf:resource="http://a.com/ontology#Woman"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.w3.org/2003/11/swrl#argument1 -->
+
+    <rdf:Description rdf:about="http://www.w3.org/2003/11/swrl#argument1">
+        <ace_lexicon:TV_pl>argument1</ace_lexicon:TV_pl>
+        <ace_lexicon:TV_sg>argument1s</ace_lexicon:TV_sg>
+        <ace_lexicon:TV_vbg>argument1ed</ace_lexicon:TV_vbg>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.w3.org/2003/11/swrl#argument2 -->
+
+    <owl:ObjectProperty rdf:about="http://www.w3.org/2003/11/swrl#argument2">
+        <ace_lexicon:TV_pl>argument2</ace_lexicon:TV_pl>
+        <ace_lexicon:TV_sg>argument2s</ace_lexicon:TV_sg>
+        <ace_lexicon:TV_vbg>argument2ed</ace_lexicon:TV_vbg>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.w3.org/2003/11/swrl#propertyPredicate -->
+
+    <rdf:Description rdf:about="http://www.w3.org/2003/11/swrl#propertyPredicate">
+        <ace_lexicon:TV_pl>propertyPredicate</ace_lexicon:TV_pl>
+        <ace_lexicon:TV_sg>propertyPredicates</ace_lexicon:TV_sg>
+        <ace_lexicon:TV_vbg>propertyPredicated</ace_lexicon:TV_vbg>
+    </rdf:Description>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.w3.org/2003/11/swrlb#args -->
+
+    <owl:DatatypeProperty rdf:about="http://www.w3.org/2003/11/swrlb#args">
+        <ace_lexicon:TV_pl>args</ace_lexicon:TV_pl>
+        <ace_lexicon:TV_sg>argses</ace_lexicon:TV_sg>
+        <ace_lexicon:TV_vbg>argsed</ace_lexicon:TV_vbg>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.w3.org/2003/11/swrlb#maxArgs -->
+
+    <owl:DatatypeProperty rdf:about="http://www.w3.org/2003/11/swrlb#maxArgs">
+        <ace_lexicon:TV_pl>maxArgs</ace_lexicon:TV_pl>
+        <ace_lexicon:TV_sg>maxArgses</ace_lexicon:TV_sg>
+        <ace_lexicon:TV_vbg>maxArgsed</ace_lexicon:TV_vbg>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.w3.org/2003/11/swrlb#minArgs -->
+
+    <owl:DatatypeProperty rdf:about="http://www.w3.org/2003/11/swrlb#minArgs">
+        <ace_lexicon:TV_pl>minArgs</ace_lexicon:TV_pl>
+        <ace_lexicon:TV_sg>minArgses</ace_lexicon:TV_sg>
+        <ace_lexicon:TV_vbg>minArgsed</ace_lexicon:TV_vbg>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://a.com/ontology#Aunt -->
+
+    <owl:Class rdf:about="http://a.com/ontology#Aunt">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://a.com/ontology#Woman"/>
+                    <owl:Class>
+                        <owl:unionOf rdf:parseType="Collection">
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="http://a.com/ontology#hasNephew"/>
+                                <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minCardinality>
+                            </owl:Restriction>
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="http://a.com/ontology#hasNiece"/>
+                                <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minCardinality>
+                            </owl:Restriction>
+                        </owl:unionOf>
+                    </owl:Class>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://a.com/ontology#Relative"/>
+        <owl:disjointWith rdf:resource="http://a.com/ontology#Uncle"/>
+        <ace_lexicon:CN_pl>Aunts</ace_lexicon:CN_pl>
+        <ace_lexicon:CN_sg>Aunt</ace_lexicon:CN_sg>
+    </owl:Class>
+    
+
+
+    <!-- http://a.com/ontology#Brother -->
+
+    <owl:Class rdf:about="http://a.com/ontology#Brother">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://a.com/ontology#Man"/>
+                    <rdf:Description rdf:about="http://a.com/ontology#Sibling"/>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <owl:disjointWith rdf:resource="http://a.com/ontology#Sister"/>
+        <ace_lexicon:CN_pl>Brothers</ace_lexicon:CN_pl>
+        <ace_lexicon:CN_sg>Brother</ace_lexicon:CN_sg>
+    </owl:Class>
+    
+
+
+    <!-- http://a.com/ontology#Child -->
+
+    <owl:Class rdf:about="http://a.com/ontology#Child">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://a.com/ontology#Person"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://a.com/ontology#hasParent"/>
+                        <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minCardinality>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <ace_lexicon:CN_pl>Children</ace_lexicon:CN_pl>
+        <ace_lexicon:CN_sg>Child</ace_lexicon:CN_sg>
+    </owl:Class>
+    
+
+
+    <!-- http://a.com/ontology#Daugther -->
+
+    <owl:Class rdf:about="http://a.com/ontology#Daugther">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://a.com/ontology#Child"/>
+                    <rdf:Description rdf:about="http://a.com/ontology#Woman"/>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <owl:disjointWith rdf:resource="http://a.com/ontology#Son"/>
+        <ace_lexicon:CN_pl>Daugthers</ace_lexicon:CN_pl>
+        <ace_lexicon:CN_sg>Daugther</ace_lexicon:CN_sg>
+    </owl:Class>
+    
+
+
+    <!-- http://a.com/ontology#Father -->
+
+    <owl:Class rdf:about="http://a.com/ontology#Father">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://a.com/ontology#Man"/>
+                    <rdf:Description rdf:about="http://a.com/ontology#Parent"/>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <ace_lexicon:CN_pl>Fathers</ace_lexicon:CN_pl>
+        <ace_lexicon:CN_sg>Father</ace_lexicon:CN_sg>
+    </owl:Class>
+    
+
+
+    <!-- http://a.com/ontology#Gender -->
+
+    <owl:Class rdf:about="http://a.com/ontology#Gender">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:oneOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://a.com/ontology#Female"/>
+                    <rdf:Description rdf:about="http://a.com/ontology#Male"/>
+                </owl:oneOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <ace_lexicon:CN_pl>Genders</ace_lexicon:CN_pl>
+        <ace_lexicon:CN_sg>Gender</ace_lexicon:CN_sg>
+    </owl:Class>
+    
+
+
+    <!-- http://a.com/ontology#Man -->
+
+    <owl:Class rdf:about="http://a.com/ontology#Man">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://a.com/ontology#Person"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://a.com/ontology#hasSex"/>
+                        <owl:hasValue rdf:resource="http://a.com/ontology#Male"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <ace_lexicon:CN_pl>Men</ace_lexicon:CN_pl>
+        <ace_lexicon:CN_sg>Man</ace_lexicon:CN_sg>
+    </owl:Class>
+    
+
+
+    <!-- http://a.com/ontology#Mother -->
+
+    <owl:Class rdf:about="http://a.com/ontology#Mother">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://a.com/ontology#Parent"/>
+                    <rdf:Description rdf:about="http://a.com/ontology#Woman"/>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <ace_lexicon:CN_pl>Mothers</ace_lexicon:CN_pl>
+        <ace_lexicon:CN_sg>Mother</ace_lexicon:CN_sg>
+    </owl:Class>
+    
+
+
+    <!-- http://a.com/ontology#Nephew -->
+
+    <owl:Class rdf:about="http://a.com/ontology#Nephew">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://a.com/ontology#Man"/>
+                    <owl:Class>
+                        <owl:unionOf rdf:parseType="Collection">
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="http://a.com/ontology#hasAunt"/>
+                                <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minCardinality>
+                            </owl:Restriction>
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="http://a.com/ontology#hasUncle"/>
+                                <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minCardinality>
+                            </owl:Restriction>
+                        </owl:unionOf>
+                    </owl:Class>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://a.com/ontology#Relative"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://a.com/ontology#hasSex"/>
+                <owl:hasValue rdf:resource="http://a.com/ontology#Male"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <owl:disjointWith rdf:resource="http://a.com/ontology#Niece"/>
+        <ace_lexicon:CN_pl>Nephews</ace_lexicon:CN_pl>
+        <ace_lexicon:CN_sg>Nephew</ace_lexicon:CN_sg>
+    </owl:Class>
+    
+
+
+    <!-- http://a.com/ontology#Niece -->
+
+    <owl:Class rdf:about="http://a.com/ontology#Niece">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://a.com/ontology#Woman"/>
+                    <owl:Class>
+                        <owl:unionOf rdf:parseType="Collection">
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="http://a.com/ontology#hasAunt"/>
+                                <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minCardinality>
+                            </owl:Restriction>
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="http://a.com/ontology#hasUncle"/>
+                                <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minCardinality>
+                            </owl:Restriction>
+                        </owl:unionOf>
+                    </owl:Class>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://a.com/ontology#Relative"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://a.com/ontology#hasSex"/>
+                <owl:hasValue rdf:resource="http://a.com/ontology#Female"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <ace_lexicon:CN_pl>Nieces</ace_lexicon:CN_pl>
+        <ace_lexicon:CN_sg>Niece</ace_lexicon:CN_sg>
+    </owl:Class>
+    
+
+
+    <!-- http://a.com/ontology#Parent -->
+
+    <owl:Class rdf:about="http://a.com/ontology#Parent">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://a.com/ontology#Person"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://a.com/ontology#hasChild"/>
+                        <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minCardinality>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <ace_lexicon:CN_pl>Parents</ace_lexicon:CN_pl>
+        <ace_lexicon:CN_sg>Parent</ace_lexicon:CN_sg>
+    </owl:Class>
+    
+
+
+    <!-- http://a.com/ontology#Person -->
+
+    <owl:Class rdf:about="http://a.com/ontology#Person">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://a.com/ontology#Man"/>
+                    <rdf:Description rdf:about="http://a.com/ontology#Woman"/>
+                </owl:unionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <ace_lexicon:CN_pl>Persons</ace_lexicon:CN_pl>
+        <ace_lexicon:CN_sg>Person</ace_lexicon:CN_sg>
+    </owl:Class>
+    
+
+
+    <!-- http://a.com/ontology#Relative -->
+
+    <owl:Class rdf:about="http://a.com/ontology#Relative">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://a.com/ontology#Aunt"/>
+                    <rdf:Description rdf:about="http://a.com/ontology#Child"/>
+                    <rdf:Description rdf:about="http://a.com/ontology#Nephew"/>
+                    <rdf:Description rdf:about="http://a.com/ontology#Niece"/>
+                    <rdf:Description rdf:about="http://a.com/ontology#Parent"/>
+                    <rdf:Description rdf:about="http://a.com/ontology#Sibling"/>
+                    <rdf:Description rdf:about="http://a.com/ontology#Uncle"/>
+                </owl:unionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://a.com/ontology#Person"/>
+        <ace_lexicon:CN_pl>Relatives</ace_lexicon:CN_pl>
+        <ace_lexicon:CN_sg>Relative</ace_lexicon:CN_sg>
+    </owl:Class>
+    
+
+
+    <!-- http://a.com/ontology#Sibling -->
+
+    <owl:Class rdf:about="http://a.com/ontology#Sibling">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://a.com/ontology#Person"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://a.com/ontology#hasSibling"/>
+                        <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minCardinality>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <ace_lexicon:CN_pl>Siblings</ace_lexicon:CN_pl>
+        <ace_lexicon:CN_sg>Sibling</ace_lexicon:CN_sg>
+    </owl:Class>
+    
+
+
+    <!-- http://a.com/ontology#Sister -->
+
+    <owl:Class rdf:about="http://a.com/ontology#Sister">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://a.com/ontology#Sibling"/>
+                    <rdf:Description rdf:about="http://a.com/ontology#Woman"/>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <ace_lexicon:CN_pl>Sisters</ace_lexicon:CN_pl>
+        <ace_lexicon:CN_sg>Sister</ace_lexicon:CN_sg>
+    </owl:Class>
+    
+
+
+    <!-- http://a.com/ontology#Son -->
+
+    <owl:Class rdf:about="http://a.com/ontology#Son">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://a.com/ontology#Child"/>
+                    <rdf:Description rdf:about="http://a.com/ontology#Man"/>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <ace_lexicon:CN_pl>Sons</ace_lexicon:CN_pl>
+        <ace_lexicon:CN_sg>Son</ace_lexicon:CN_sg>
+    </owl:Class>
+    
+
+
+    <!-- http://a.com/ontology#Uncle -->
+
+    <owl:Class rdf:about="http://a.com/ontology#Uncle">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://a.com/ontology#Man"/>
+                    <owl:Class>
+                        <owl:unionOf rdf:parseType="Collection">
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="http://a.com/ontology#hasNephew"/>
+                                <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minCardinality>
+                            </owl:Restriction>
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="http://a.com/ontology#hasNiece"/>
+                                <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minCardinality>
+                            </owl:Restriction>
+                        </owl:unionOf>
+                    </owl:Class>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://a.com/ontology#Relative"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://a.com/ontology#hasSex"/>
+                <owl:hasValue rdf:resource="http://a.com/ontology#Male"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <ace_lexicon:CN_pl>Uncles</ace_lexicon:CN_pl>
+        <ace_lexicon:CN_sg>Uncle</ace_lexicon:CN_sg>
+    </owl:Class>
+    
+
+
+    <!-- http://a.com/ontology#Woman -->
+
+    <owl:Class rdf:about="http://a.com/ontology#Woman">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://a.com/ontology#Person"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://a.com/ontology#hasSex"/>
+                        <owl:hasValue rdf:resource="http://a.com/ontology#Female"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <ace_lexicon:CN_pl>Women</ace_lexicon:CN_pl>
+        <ace_lexicon:CN_sg>Woman</ace_lexicon:CN_sg>
+    </owl:Class>
+    
+
+
+    <!-- http://www.w3.org/2003/11/swrl#Builtin -->
+
+    <rdf:Description rdf:about="http://www.w3.org/2003/11/swrl#Builtin">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.w3.org/2003/11/swrlb#args"/>
+                <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.w3.org/2003/11/swrlb#maxArgs"/>
+                <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.w3.org/2003/11/swrlb#minArgs"/>
+                <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.w3.org/2003/11/swrlb#args"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.w3.org/2003/11/swrlb#maxArgs"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.w3.org/2003/11/swrlb#minArgs"/>
+                <owl:maxCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <ace_lexicon:CN_pl>Builtins</ace_lexicon:CN_pl>
+        <ace_lexicon:CN_sg>Builtin</ace_lexicon:CN_sg>
+    </rdf:Description>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://a.com/ontology#F00 -->
+
+    <owl:NamedIndividual rdf:about="http://a.com/ontology#F00">
+        <rdf:type rdf:resource="http://a.com/ontology#Woman"/>
+        <hasChild rdf:resource="http://a.com/ontology#F10"/>
+        <hasChild rdf:resource="http://a.com/ontology#F11"/>
+        <hasChild rdf:resource="http://a.com/ontology#M10"/>
+        <ace_lexicon:PN_sg>F00</ace_lexicon:PN_sg>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://a.com/ontology#F01 -->
+
+    <owl:NamedIndividual rdf:about="http://a.com/ontology#F01">
+        <rdf:type rdf:resource="http://a.com/ontology#Woman"/>
+        <hasChild rdf:resource="http://a.com/ontology#F12"/>
+        <hasChild rdf:resource="http://a.com/ontology#M11"/>
+        <hasChild rdf:resource="http://a.com/ontology#M12"/>
+        <ace_lexicon:PN_sg>F01</ace_lexicon:PN_sg>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://a.com/ontology#F10 -->
+
+    <owl:NamedIndividual rdf:about="http://a.com/ontology#F10">
+        <rdf:type rdf:resource="http://a.com/ontology#Woman"/>
+        <hasBrother rdf:resource="http://a.com/ontology#M10"/>
+        <hasParent rdf:resource="http://a.com/ontology#F00"/>
+        <hasParent rdf:resource="http://a.com/ontology#M00"/>
+        <hasSister rdf:resource="http://a.com/ontology#F11"/>
+        <ace_lexicon:PN_sg>F10</ace_lexicon:PN_sg>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://a.com/ontology#F11 -->
+
+    <owl:NamedIndividual rdf:about="http://a.com/ontology#F11">
+        <rdf:type rdf:resource="http://a.com/ontology#Woman"/>
+        <hasBrother rdf:resource="http://a.com/ontology#M10"/>
+        <hasParent rdf:resource="http://a.com/ontology#F00"/>
+        <hasParent rdf:resource="http://a.com/ontology#M00"/>
+        <hasSister rdf:resource="http://a.com/ontology#F10"/>
+        <ace_lexicon:PN_sg>F11</ace_lexicon:PN_sg>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://a.com/ontology#F12 -->
+
+    <owl:NamedIndividual rdf:about="http://a.com/ontology#F12">
+        <rdf:type rdf:resource="http://a.com/ontology#Woman"/>
+        <hasBrother rdf:resource="http://a.com/ontology#M11"/>
+        <hasBrother rdf:resource="http://a.com/ontology#M12"/>
+        <hasParent rdf:resource="http://a.com/ontology#F01"/>
+        <hasParent rdf:resource="http://a.com/ontology#M01"/>
+        <ace_lexicon:PN_sg>F12</ace_lexicon:PN_sg>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://a.com/ontology#F13 -->
+
+    <owl:NamedIndividual rdf:about="http://a.com/ontology#F13">
+        <rdf:type rdf:resource="http://a.com/ontology#Woman"/>
+        <ace_lexicon:PN_sg>F13</ace_lexicon:PN_sg>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://a.com/ontology#F20 -->
+
+    <owl:NamedIndividual rdf:about="http://a.com/ontology#F20">
+        <rdf:type rdf:resource="http://a.com/ontology#Woman"/>
+        <hasSex rdf:resource="http://a.com/ontology#Female"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://a.com/ontology#F21 -->
+
+    <owl:NamedIndividual rdf:about="http://a.com/ontology#F21">
+        <rdf:type rdf:resource="http://a.com/ontology#Woman"/>
+        <hasSex rdf:resource="http://a.com/ontology#Female"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://a.com/ontology#F22 -->
+
+    <owl:NamedIndividual rdf:about="http://a.com/ontology#F22">
+        <rdf:type rdf:resource="http://a.com/ontology#Woman"/>
+        <hasBrother rdf:resource="http://a.com/ontology#M22"/>
+        <hasFather rdf:resource="http://a.com/ontology#M12"/>
+        <hasMother rdf:resource="http://a.com/ontology#F13"/>
+        <hasSex rdf:resource="http://a.com/ontology#Female"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://a.com/ontology#F30 -->
+
+    <owl:NamedIndividual rdf:about="http://a.com/ontology#F30">
+        <rdf:type rdf:resource="http://a.com/ontology#Woman"/>
+        <hasFather rdf:resource="http://a.com/ontology#M21"/>
+        <hasMother rdf:resource="http://a.com/ontology#F21"/>
+        <hasSex rdf:resource="http://a.com/ontology#Female"/>
+        <hasSister rdf:resource="http://a.com/ontology#F31"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://a.com/ontology#F31 -->
+
+    <owl:NamedIndividual rdf:about="http://a.com/ontology#F31">
+        <rdf:type rdf:resource="http://a.com/ontology#Woman"/>
+        <hasFather rdf:resource="http://a.com/ontology#M21"/>
+        <hasMother rdf:resource="http://a.com/ontology#F21"/>
+        <hasSex rdf:resource="http://a.com/ontology#Female"/>
+        <hasSister rdf:resource="http://a.com/ontology#F30"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://a.com/ontology#F32 -->
+
+    <owl:NamedIndividual rdf:about="http://a.com/ontology#F32">
+        <rdf:type rdf:resource="http://a.com/ontology#Woman"/>
+        <hasBrother rdf:resource="http://a.com/ontology#M32"/>
+        <hasFather rdf:resource="http://a.com/ontology#M20"/>
+        <hasMother rdf:resource="http://a.com/ontology#F20"/>
+        <hasSex rdf:resource="http://a.com/ontology#Female"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://a.com/ontology#Female -->
+
+    <owl:NamedIndividual rdf:about="http://a.com/ontology#Female">
+        <rdf:type rdf:resource="http://a.com/ontology#Gender"/>
+        <ace_lexicon:PN_sg>Female</ace_lexicon:PN_sg>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://a.com/ontology#M00 -->
+
+    <owl:NamedIndividual rdf:about="http://a.com/ontology#M00">
+        <rdf:type rdf:resource="http://a.com/ontology#Man"/>
+        <hasChild rdf:resource="http://a.com/ontology#F10"/>
+        <hasChild rdf:resource="http://a.com/ontology#F11"/>
+        <hasChild rdf:resource="http://a.com/ontology#M10"/>
+        <ace_lexicon:PN_sg>M00</ace_lexicon:PN_sg>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://a.com/ontology#M01 -->
+
+    <owl:NamedIndividual rdf:about="http://a.com/ontology#M01">
+        <rdf:type rdf:resource="http://a.com/ontology#Man"/>
+        <hasChild rdf:resource="http://a.com/ontology#F12"/>
+        <hasChild rdf:resource="http://a.com/ontology#M11"/>
+        <hasChild rdf:resource="http://a.com/ontology#M12"/>
+        <ace_lexicon:PN_sg>M01</ace_lexicon:PN_sg>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://a.com/ontology#M10 -->
+
+    <owl:NamedIndividual rdf:about="http://a.com/ontology#M10">
+        <rdf:type rdf:resource="http://a.com/ontology#Man"/>
+        <hasParent rdf:resource="http://a.com/ontology#F00"/>
+        <hasParent rdf:resource="http://a.com/ontology#M00"/>
+        <hasSister rdf:resource="http://a.com/ontology#F10"/>
+        <hasSister rdf:resource="http://a.com/ontology#F11"/>
+        <ace_lexicon:PN_sg>M10</ace_lexicon:PN_sg>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://a.com/ontology#M11 -->
+
+    <owl:NamedIndividual rdf:about="http://a.com/ontology#M11">
+        <rdf:type rdf:resource="http://a.com/ontology#Man"/>
+        <hasBrother rdf:resource="http://a.com/ontology#M12"/>
+        <hasParent rdf:resource="http://a.com/ontology#F01"/>
+        <hasParent rdf:resource="http://a.com/ontology#M01"/>
+        <hasSister rdf:resource="http://a.com/ontology#F12"/>
+        <ace_lexicon:PN_sg>M11</ace_lexicon:PN_sg>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://a.com/ontology#M12 -->
+
+    <owl:NamedIndividual rdf:about="http://a.com/ontology#M12">
+        <rdf:type rdf:resource="http://a.com/ontology#Man"/>
+        <hasBrother rdf:resource="http://a.com/ontology#M11"/>
+        <hasParent rdf:resource="http://a.com/ontology#F01"/>
+        <hasParent rdf:resource="http://a.com/ontology#M01"/>
+        <hasSister rdf:resource="http://a.com/ontology#F12"/>
+        <ace_lexicon:PN_sg>M12</ace_lexicon:PN_sg>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://a.com/ontology#M13 -->
+
+    <owl:NamedIndividual rdf:about="http://a.com/ontology#M13">
+        <rdf:type rdf:resource="http://a.com/ontology#Man"/>
+        <ace_lexicon:PN_sg>M13</ace_lexicon:PN_sg>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://a.com/ontology#M20 -->
+
+    <owl:NamedIndividual rdf:about="http://a.com/ontology#M20">
+        <rdf:type rdf:resource="http://a.com/ontology#Man"/>
+        <hasFather rdf:resource="http://a.com/ontology#M10"/>
+        <hasMother rdf:resource="http://a.com/ontology#F12"/>
+        <hasSex rdf:resource="http://a.com/ontology#Male"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://a.com/ontology#M21 -->
+
+    <owl:NamedIndividual rdf:about="http://a.com/ontology#M21">
+        <rdf:type rdf:resource="http://a.com/ontology#Man"/>
+        <hasFather rdf:resource="http://a.com/ontology#M13"/>
+        <hasMother rdf:resource="http://a.com/ontology#F10"/>
+        <hasSex rdf:resource="http://a.com/ontology#Male"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://a.com/ontology#M22 -->
+
+    <owl:NamedIndividual rdf:about="http://a.com/ontology#M22">
+        <rdf:type rdf:resource="http://a.com/ontology#Man"/>
+        <hasFather rdf:resource="http://a.com/ontology#M12"/>
+        <hasMother rdf:resource="http://a.com/ontology#F13"/>
+        <hasSex rdf:resource="http://a.com/ontology#Male"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://a.com/ontology#M30 -->
+
+    <owl:NamedIndividual rdf:about="http://a.com/ontology#M30">
+        <rdf:type rdf:resource="http://a.com/ontology#Man"/>
+        <hasMother rdf:resource="http://a.com/ontology#F22"/>
+        <hasSex rdf:resource="http://a.com/ontology#Male"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://a.com/ontology#M31 -->
+
+    <owl:NamedIndividual rdf:about="http://a.com/ontology#M31">
+        <rdf:type rdf:resource="http://a.com/ontology#Man"/>
+        <hasFather rdf:resource="http://a.com/ontology#M22"/>
+        <hasSex rdf:resource="http://a.com/ontology#Male"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://a.com/ontology#M32 -->
+
+    <owl:NamedIndividual rdf:about="http://a.com/ontology#M32">
+        <rdf:type rdf:resource="http://a.com/ontology#Man"/>
+        <hasFather rdf:resource="http://a.com/ontology#M20"/>
+        <hasMother rdf:resource="http://a.com/ontology#F20"/>
+        <hasSex rdf:resource="http://a.com/ontology#Male"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://a.com/ontology#Male -->
+
+    <owl:NamedIndividual rdf:about="http://a.com/ontology#Male">
+        <rdf:type rdf:resource="http://a.com/ontology#Gender"/>
+        <ace_lexicon:PN_sg>Male</ace_lexicon:PN_sg>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://a.com/ontology#hasSister -->
+
+    <owl:NamedIndividual rdf:about="http://a.com/ontology#hasSister"/>
+    
+
+
+    <!-- http://a.com/ontology#y -->
+
+    <owl:NamedIndividual rdf:about="http://a.com/ontology#y">
+        <ace_lexicon:PN_sg>y</ace_lexicon:PN_sg>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://a.com/ontology#z -->
+
+    <owl:NamedIndividual rdf:about="http://a.com/ontology#z">
+        <ace_lexicon:PN_sg>z</ace_lexicon:PN_sg>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.w3.org/2003/11/swrlb#abs -->
+
+    <owl:NamedIndividual rdf:about="http://www.w3.org/2003/11/swrlb#abs">
+        <swrlb:args rdf:datatype="http://www.w3.org/2001/XMLSchema#int">2</swrlb:args>
+        <ace_lexicon:PN_sg>abs</ace_lexicon:PN_sg>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.w3.org/2003/11/swrlb#add -->
+
+    <owl:NamedIndividual rdf:about="http://www.w3.org/2003/11/swrlb#add">
+        <swrlb:minArgs rdf:datatype="http://www.w3.org/2001/XMLSchema#int">3</swrlb:minArgs>
+        <ace_lexicon:PN_sg>add</ace_lexicon:PN_sg>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.w3.org/2003/11/swrlb#addDayTimeDurationToDate -->
+
+    <owl:NamedIndividual rdf:about="http://www.w3.org/2003/11/swrlb#addDayTimeDurationToDate">
+        <swrlb:args rdf:datatype="http://www.w3.org/2001/XMLSchema#int">3</swrlb:args>
+        <ace_lexicon:PN_sg>addDayTimeDurationToDate</ace_lexicon:PN_sg>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.w3.org/2003/11/swrlb#addDayTimeDurationToDateTime -->
+
+    <owl:NamedIndividual rdf:about="http://www.w3.org/2003/11/swrlb#addDayTimeDurationToDateTime">
+        <swrlb:args rdf:datatype="http://www.w3.org/2001/XMLSchema#int">3</swrlb:args>
+        <ace_lexicon:PN_sg>addDayTimeDurationToDateTime</ace_lexicon:PN_sg>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.w3.org/2003/11/swrlb#addDayTimeDurationToTime -->
+
+    <owl:NamedIndividual rdf:about="http://www.w3.org/2003/11/swrlb#addDayTimeDurationToTime">
+        <swrlb:args rdf:datatype="http://www.w3.org/2001/XMLSchema#int">3</swrlb:args>
+        <ace_lexicon:PN_sg>addDayTimeDurationToTime</ace_lexicon:PN_sg>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.w3.org/2003/11/swrlb#addDayTimeDurations -->
+
+    <owl:NamedIndividual rdf:about="http://www.w3.org/2003/11/swrlb#addDayTimeDurations">
+        <swrlb:args rdf:datatype="http://www.w3.org/2001/XMLSchema#int">3</swrlb:args>
+        <ace_lexicon:PN_sg>addDayTimeDurations</ace_lexicon:PN_sg>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.w3.org/2003/11/swrlb#addYearMonthDurationToDate -->
+
+    <owl:NamedIndividual rdf:about="http://www.w3.org/2003/11/swrlb#addYearMonthDurationToDate">
+        <swrlb:args rdf:datatype="http://www.w3.org/2001/XMLSchema#int">3</swrlb:args>
+        <ace_lexicon:PN_sg>addYearMonthDurationToDate</ace_lexicon:PN_sg>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.w3.org/2003/11/swrlb#addYearMonthDurationToDateTime -->
+
+    <owl:NamedIndividual rdf:about="http://www.w3.org/2003/11/swrlb#addYearMonthDurationToDateTime">
+        <swrlb:args rdf:datatype="http://www.w3.org/2001/XMLSchema#int">3</swrlb:args>
+        <ace_lexicon:PN_sg>addYearMonthDurationToDateTime</ace_lexicon:PN_sg>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.w3.org/2003/11/swrlb#addYearMonthDurations -->
+
+    <owl:NamedIndividual rdf:about="http://www.w3.org/2003/11/swrlb#addYearMonthDurations">
+        <swrlb:args rdf:datatype="http://www.w3.org/2001/XMLSchema#int">3</swrlb:args>
+        <ace_lexicon:PN_sg>addYearMonthDurations</ace_lexicon:PN_sg>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.w3.org/2003/11/swrlb#anyURI -->
+
+    <owl:NamedIndividual rdf:about="http://www.w3.org/2003/11/swrlb#anyURI">
+        <swrlb:args rdf:datatype="http://www.w3.org/2001/XMLSchema#int">7</swrlb:args>
+        <ace_lexicon:PN_sg>anyURI</ace_lexicon:PN_sg>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.w3.org/2003/11/swrlb#booleanNot -->
+
+    <owl:NamedIndividual rdf:about="http://www.w3.org/2003/11/swrlb#booleanNot">
+        <swrlb:args rdf:datatype="http://www.w3.org/2001/XMLSchema#int">2</swrlb:args>
+        <ace_lexicon:PN_sg>booleanNot</ace_lexicon:PN_sg>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.w3.org/2003/11/swrlb#ceiling -->
+
+    <owl:NamedIndividual rdf:about="http://www.w3.org/2003/11/swrlb#ceiling">
+        <swrlb:args rdf:datatype="http://www.w3.org/2001/XMLSchema#int">2</swrlb:args>
+        <ace_lexicon:PN_sg>ceiling</ace_lexicon:PN_sg>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.w3.org/2003/11/swrlb#contains -->
+
+    <owl:NamedIndividual rdf:about="http://www.w3.org/2003/11/swrlb#contains">
+        <swrlb:args rdf:datatype="http://www.w3.org/2001/XMLSchema#int">2</swrlb:args>
+        <ace_lexicon:PN_sg>contains</ace_lexicon:PN_sg>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.w3.org/2003/11/swrlb#containsIgnoreCase -->
+
+    <owl:NamedIndividual rdf:about="http://www.w3.org/2003/11/swrlb#containsIgnoreCase">
+        <swrlb:args rdf:datatype="http://www.w3.org/2001/XMLSchema#int">2</swrlb:args>
+        <ace_lexicon:PN_sg>containsIgnoreCase</ace_lexicon:PN_sg>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.w3.org/2003/11/swrlb#cos -->
+
+    <owl:NamedIndividual rdf:about="http://www.w3.org/2003/11/swrlb#cos">
+        <swrlb:args rdf:datatype="http://www.w3.org/2001/XMLSchema#int">2</swrlb:args>
+        <ace_lexicon:PN_sg>cos</ace_lexicon:PN_sg>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.w3.org/2003/11/swrlb#date -->
+
+    <owl:NamedIndividual rdf:about="http://www.w3.org/2003/11/swrlb#date">
+        <swrlb:args rdf:datatype="http://www.w3.org/2001/XMLSchema#int">5</swrlb:args>
+        <ace_lexicon:PN_sg>date</ace_lexicon:PN_sg>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.w3.org/2003/11/swrlb#dateTime -->
+
+    <owl:NamedIndividual rdf:about="http://www.w3.org/2003/11/swrlb#dateTime">
+        <swrlb:args rdf:datatype="http://www.w3.org/2001/XMLSchema#int">8</swrlb:args>
+        <ace_lexicon:PN_sg>dateTime</ace_lexicon:PN_sg>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.w3.org/2003/11/swrlb#dayTimeDuration -->
+
+    <owl:NamedIndividual rdf:about="http://www.w3.org/2003/11/swrlb#dayTimeDuration">
+        <swrlb:args rdf:datatype="http://www.w3.org/2001/XMLSchema#int">5</swrlb:args>
+        <ace_lexicon:PN_sg>dayTimeDuration</ace_lexicon:PN_sg>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.w3.org/2003/11/swrlb#divide -->
+
+    <owl:NamedIndividual rdf:about="http://www.w3.org/2003/11/swrlb#divide">
+        <swrlb:args rdf:datatype="http://www.w3.org/2001/XMLSchema#int">3</swrlb:args>
+        <ace_lexicon:PN_sg>divide</ace_lexicon:PN_sg>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.w3.org/2003/11/swrlb#divideDayTimeDuration -->
+
+    <owl:NamedIndividual rdf:about="http://www.w3.org/2003/11/swrlb#divideDayTimeDuration">
+        <swrlb:args rdf:datatype="http://www.w3.org/2001/XMLSchema#int">3</swrlb:args>
+        <ace_lexicon:PN_sg>divideDayTimeDuration</ace_lexicon:PN_sg>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.w3.org/2003/11/swrlb#divideYearMonthDuration -->
+
+    <owl:NamedIndividual rdf:about="http://www.w3.org/2003/11/swrlb#divideYearMonthDuration">
+        <swrlb:args rdf:datatype="http://www.w3.org/2001/XMLSchema#int">3</swrlb:args>
+        <ace_lexicon:PN_sg>divideYearMonthDuration</ace_lexicon:PN_sg>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.w3.org/2003/11/swrlb#empty -->
+
+    <owl:NamedIndividual rdf:about="http://www.w3.org/2003/11/swrlb#empty">
+        <swrlb:args rdf:datatype="http://www.w3.org/2001/XMLSchema#int">1</swrlb:args>
+        <ace_lexicon:PN_sg>empty</ace_lexicon:PN_sg>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.w3.org/2003/11/swrlb#endsWith -->
+
+    <owl:NamedIndividual rdf:about="http://www.w3.org/2003/11/swrlb#endsWith">
+        <swrlb:args rdf:datatype="http://www.w3.org/2001/XMLSchema#int">2</swrlb:args>
+        <ace_lexicon:PN_sg>endsWith</ace_lexicon:PN_sg>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.w3.org/2003/11/swrlb#equal -->
+
+    <owl:NamedIndividual rdf:about="http://www.w3.org/2003/11/swrlb#equal">
+        <swrlb:args rdf:datatype="http://www.w3.org/2001/XMLSchema#int">2</swrlb:args>
+        <ace_lexicon:PN_sg>equal</ace_lexicon:PN_sg>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.w3.org/2003/11/swrlb#first -->
+
+    <owl:NamedIndividual rdf:about="http://www.w3.org/2003/11/swrlb#first">
+        <swrlb:args rdf:datatype="http://www.w3.org/2001/XMLSchema#int">2</swrlb:args>
+        <ace_lexicon:PN_sg>first</ace_lexicon:PN_sg>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.w3.org/2003/11/swrlb#floor -->
+
+    <owl:NamedIndividual rdf:about="http://www.w3.org/2003/11/swrlb#floor">
+        <swrlb:args rdf:datatype="http://www.w3.org/2001/XMLSchema#int">2</swrlb:args>
+        <ace_lexicon:PN_sg>floor</ace_lexicon:PN_sg>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.w3.org/2003/11/swrlb#greaterThan -->
+
+    <owl:NamedIndividual rdf:about="http://www.w3.org/2003/11/swrlb#greaterThan">
+        <swrlb:args rdf:datatype="http://www.w3.org/2001/XMLSchema#int">2</swrlb:args>
+        <ace_lexicon:PN_sg>greaterThan</ace_lexicon:PN_sg>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.w3.org/2003/11/swrlb#greaterThanOrEqual -->
+
+    <owl:NamedIndividual rdf:about="http://www.w3.org/2003/11/swrlb#greaterThanOrEqual">
+        <swrlb:args rdf:datatype="http://www.w3.org/2001/XMLSchema#int">2</swrlb:args>
+        <ace_lexicon:PN_sg>greaterThanOrEqual</ace_lexicon:PN_sg>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.w3.org/2003/11/swrlb#integerDivide -->
+
+    <owl:NamedIndividual rdf:about="http://www.w3.org/2003/11/swrlb#integerDivide">
+        <swrlb:args rdf:datatype="http://www.w3.org/2001/XMLSchema#int">3</swrlb:args>
+        <ace_lexicon:PN_sg>integerDivide</ace_lexicon:PN_sg>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.w3.org/2003/11/swrlb#length -->
+
+    <owl:NamedIndividual rdf:about="http://www.w3.org/2003/11/swrlb#length">
+        <swrlb:args rdf:datatype="http://www.w3.org/2001/XMLSchema#int">2</swrlb:args>
+        <ace_lexicon:PN_sg>length</ace_lexicon:PN_sg>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.w3.org/2003/11/swrlb#lessThan -->
+
+    <owl:NamedIndividual rdf:about="http://www.w3.org/2003/11/swrlb#lessThan">
+        <swrlb:args rdf:datatype="http://www.w3.org/2001/XMLSchema#int">2</swrlb:args>
+        <ace_lexicon:PN_sg>lessThan</ace_lexicon:PN_sg>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.w3.org/2003/11/swrlb#lessThanOrEqual -->
+
+    <owl:NamedIndividual rdf:about="http://www.w3.org/2003/11/swrlb#lessThanOrEqual">
+        <swrlb:args rdf:datatype="http://www.w3.org/2001/XMLSchema#int">2</swrlb:args>
+        <ace_lexicon:PN_sg>lessThanOrEqual</ace_lexicon:PN_sg>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.w3.org/2003/11/swrlb#listConcat -->
+
+    <owl:NamedIndividual rdf:about="http://www.w3.org/2003/11/swrlb#listConcat">
+        <swrlb:minArgs rdf:datatype="http://www.w3.org/2001/XMLSchema#int">3</swrlb:minArgs>
+        <ace_lexicon:PN_sg>listConcat</ace_lexicon:PN_sg>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.w3.org/2003/11/swrlb#listIntersection -->
+
+    <owl:NamedIndividual rdf:about="http://www.w3.org/2003/11/swrlb#listIntersection">
+        <swrlb:args rdf:datatype="http://www.w3.org/2001/XMLSchema#int">3</swrlb:args>
+        <ace_lexicon:PN_sg>listIntersection</ace_lexicon:PN_sg>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.w3.org/2003/11/swrlb#listSubtraction -->
+
+    <owl:NamedIndividual rdf:about="http://www.w3.org/2003/11/swrlb#listSubtraction">
+        <swrlb:args rdf:datatype="http://www.w3.org/2001/XMLSchema#int">3</swrlb:args>
+        <ace_lexicon:PN_sg>listSubtraction</ace_lexicon:PN_sg>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.w3.org/2003/11/swrlb#lowerCase -->
+
+    <owl:NamedIndividual rdf:about="http://www.w3.org/2003/11/swrlb#lowerCase">
+        <swrlb:args rdf:datatype="http://www.w3.org/2001/XMLSchema#int">2</swrlb:args>
+        <ace_lexicon:PN_sg>lowerCase</ace_lexicon:PN_sg>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.w3.org/2003/11/swrlb#matches -->
+
+    <owl:NamedIndividual rdf:about="http://www.w3.org/2003/11/swrlb#matches">
+        <swrlb:args rdf:datatype="http://www.w3.org/2001/XMLSchema#int">2</swrlb:args>
+        <ace_lexicon:PN_sg>matches</ace_lexicon:PN_sg>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.w3.org/2003/11/swrlb#member -->
+
+    <owl:NamedIndividual rdf:about="http://www.w3.org/2003/11/swrlb#member">
+        <swrlb:args rdf:datatype="http://www.w3.org/2001/XMLSchema#int">2</swrlb:args>
+        <ace_lexicon:PN_sg>member</ace_lexicon:PN_sg>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.w3.org/2003/11/swrlb#mod -->
+
+    <owl:NamedIndividual rdf:about="http://www.w3.org/2003/11/swrlb#mod">
+        <swrlb:args rdf:datatype="http://www.w3.org/2001/XMLSchema#int">3</swrlb:args>
+        <ace_lexicon:PN_sg>mod</ace_lexicon:PN_sg>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.w3.org/2003/11/swrlb#multiply -->
+
+    <owl:NamedIndividual rdf:about="http://www.w3.org/2003/11/swrlb#multiply">
+        <swrlb:minArgs rdf:datatype="http://www.w3.org/2001/XMLSchema#int">3</swrlb:minArgs>
+        <ace_lexicon:PN_sg>multiply</ace_lexicon:PN_sg>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.w3.org/2003/11/swrlb#multiplyDayTimeDuration -->
+
+    <owl:NamedIndividual rdf:about="http://www.w3.org/2003/11/swrlb#multiplyDayTimeDuration">
+        <swrlb:args rdf:datatype="http://www.w3.org/2001/XMLSchema#int">3</swrlb:args>
+        <ace_lexicon:PN_sg>multiplyDayTimeDuration</ace_lexicon:PN_sg>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.w3.org/2003/11/swrlb#multiplyYearMonthDuration -->
+
+    <owl:NamedIndividual rdf:about="http://www.w3.org/2003/11/swrlb#multiplyYearMonthDuration">
+        <swrlb:args rdf:datatype="http://www.w3.org/2001/XMLSchema#int">3</swrlb:args>
+        <ace_lexicon:PN_sg>multiplyYearMonthDuration</ace_lexicon:PN_sg>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.w3.org/2003/11/swrlb#normalizeSpace -->
+
+    <owl:NamedIndividual rdf:about="http://www.w3.org/2003/11/swrlb#normalizeSpace">
+        <swrlb:args rdf:datatype="http://www.w3.org/2001/XMLSchema#int">2</swrlb:args>
+        <ace_lexicon:PN_sg>normalizeSpace</ace_lexicon:PN_sg>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.w3.org/2003/11/swrlb#notEqual -->
+
+    <owl:NamedIndividual rdf:about="http://www.w3.org/2003/11/swrlb#notEqual">
+        <swrlb:args rdf:datatype="http://www.w3.org/2001/XMLSchema#int">2</swrlb:args>
+        <ace_lexicon:PN_sg>notEqual</ace_lexicon:PN_sg>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.w3.org/2003/11/swrlb#pow -->
+
+    <owl:NamedIndividual rdf:about="http://www.w3.org/2003/11/swrlb#pow">
+        <swrlb:args rdf:datatype="http://www.w3.org/2001/XMLSchema#int">3</swrlb:args>
+        <ace_lexicon:PN_sg>pow</ace_lexicon:PN_sg>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.w3.org/2003/11/swrlb#replace -->
+
+    <owl:NamedIndividual rdf:about="http://www.w3.org/2003/11/swrlb#replace">
+        <swrlb:args rdf:datatype="http://www.w3.org/2001/XMLSchema#int">4</swrlb:args>
+        <ace_lexicon:PN_sg>replace</ace_lexicon:PN_sg>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.w3.org/2003/11/swrlb#resolveURI -->
+
+    <owl:NamedIndividual rdf:about="http://www.w3.org/2003/11/swrlb#resolveURI">
+        <swrlb:args rdf:datatype="http://www.w3.org/2001/XMLSchema#int">3</swrlb:args>
+        <ace_lexicon:PN_sg>resolveURI</ace_lexicon:PN_sg>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.w3.org/2003/11/swrlb#rest -->
+
+    <owl:NamedIndividual rdf:about="http://www.w3.org/2003/11/swrlb#rest">
+        <swrlb:args rdf:datatype="http://www.w3.org/2001/XMLSchema#int">2</swrlb:args>
+        <ace_lexicon:PN_sg>rest</ace_lexicon:PN_sg>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.w3.org/2003/11/swrlb#round -->
+
+    <owl:NamedIndividual rdf:about="http://www.w3.org/2003/11/swrlb#round">
+        <swrlb:args rdf:datatype="http://www.w3.org/2001/XMLSchema#int">2</swrlb:args>
+        <ace_lexicon:PN_sg>round</ace_lexicon:PN_sg>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.w3.org/2003/11/swrlb#roundHalfToEven -->
+
+    <owl:NamedIndividual rdf:about="http://www.w3.org/2003/11/swrlb#roundHalfToEven">
+        <swrlb:args rdf:datatype="http://www.w3.org/2001/XMLSchema#int">2</swrlb:args>
+        <ace_lexicon:PN_sg>roundHalfToEven</ace_lexicon:PN_sg>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.w3.org/2003/11/swrlb#sin -->
+
+    <owl:NamedIndividual rdf:about="http://www.w3.org/2003/11/swrlb#sin">
+        <swrlb:args rdf:datatype="http://www.w3.org/2001/XMLSchema#int">2</swrlb:args>
+        <ace_lexicon:PN_sg>sin</ace_lexicon:PN_sg>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.w3.org/2003/11/swrlb#startsWith -->
+
+    <owl:NamedIndividual rdf:about="http://www.w3.org/2003/11/swrlb#startsWith">
+        <swrlb:args rdf:datatype="http://www.w3.org/2001/XMLSchema#int">2</swrlb:args>
+        <ace_lexicon:PN_sg>startsWith</ace_lexicon:PN_sg>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.w3.org/2003/11/swrlb#stringConcat -->
+
+    <owl:NamedIndividual rdf:about="http://www.w3.org/2003/11/swrlb#stringConcat">
+        <swrlb:minArgs rdf:datatype="http://www.w3.org/2001/XMLSchema#int">3</swrlb:minArgs>
+        <ace_lexicon:PN_sg>stringConcat</ace_lexicon:PN_sg>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.w3.org/2003/11/swrlb#stringEqualIgnoreCase -->
+
+    <owl:NamedIndividual rdf:about="http://www.w3.org/2003/11/swrlb#stringEqualIgnoreCase">
+        <swrlb:args rdf:datatype="http://www.w3.org/2001/XMLSchema#int">2</swrlb:args>
+        <ace_lexicon:PN_sg>stringEqualIgnoreCase</ace_lexicon:PN_sg>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.w3.org/2003/11/swrlb#stringLength -->
+
+    <owl:NamedIndividual rdf:about="http://www.w3.org/2003/11/swrlb#stringLength">
+        <swrlb:args rdf:datatype="http://www.w3.org/2001/XMLSchema#int">2</swrlb:args>
+        <ace_lexicon:PN_sg>stringLength</ace_lexicon:PN_sg>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.w3.org/2003/11/swrlb#sublist -->
+
+    <owl:NamedIndividual rdf:about="http://www.w3.org/2003/11/swrlb#sublist">
+        <swrlb:args rdf:datatype="http://www.w3.org/2001/XMLSchema#int">2</swrlb:args>
+        <ace_lexicon:PN_sg>sublist</ace_lexicon:PN_sg>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.w3.org/2003/11/swrlb#substring -->
+
+    <owl:NamedIndividual rdf:about="http://www.w3.org/2003/11/swrlb#substring">
+        <swrlb:maxArgs rdf:datatype="http://www.w3.org/2001/XMLSchema#int">4</swrlb:maxArgs>
+        <swrlb:minArgs rdf:datatype="http://www.w3.org/2001/XMLSchema#int">3</swrlb:minArgs>
+        <ace_lexicon:PN_sg>substring</ace_lexicon:PN_sg>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.w3.org/2003/11/swrlb#substringAfter -->
+
+    <owl:NamedIndividual rdf:about="http://www.w3.org/2003/11/swrlb#substringAfter">
+        <swrlb:args rdf:datatype="http://www.w3.org/2001/XMLSchema#int">3</swrlb:args>
+        <ace_lexicon:PN_sg>substringAfter</ace_lexicon:PN_sg>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.w3.org/2003/11/swrlb#substringBefore -->
+
+    <owl:NamedIndividual rdf:about="http://www.w3.org/2003/11/swrlb#substringBefore">
+        <swrlb:args rdf:datatype="http://www.w3.org/2001/XMLSchema#int">3</swrlb:args>
+        <ace_lexicon:PN_sg>substringBefore</ace_lexicon:PN_sg>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.w3.org/2003/11/swrlb#subtract -->
+
+    <owl:NamedIndividual rdf:about="http://www.w3.org/2003/11/swrlb#subtract">
+        <swrlb:args rdf:datatype="http://www.w3.org/2001/XMLSchema#int">3</swrlb:args>
+        <ace_lexicon:PN_sg>subtract</ace_lexicon:PN_sg>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.w3.org/2003/11/swrlb#subtractDateTimesYieldingDayTimeDuration -->
+
+    <owl:NamedIndividual rdf:about="http://www.w3.org/2003/11/swrlb#subtractDateTimesYieldingDayTimeDuration">
+        <swrlb:args rdf:datatype="http://www.w3.org/2001/XMLSchema#int">3</swrlb:args>
+        <ace_lexicon:PN_sg>subtractDateTimesYieldingDayTimeDuration</ace_lexicon:PN_sg>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.w3.org/2003/11/swrlb#subtractDateTimesYieldingYearMonthDuration -->
+
+    <owl:NamedIndividual rdf:about="http://www.w3.org/2003/11/swrlb#subtractDateTimesYieldingYearMonthDuration">
+        <swrlb:args rdf:datatype="http://www.w3.org/2001/XMLSchema#int">3</swrlb:args>
+        <ace_lexicon:PN_sg>subtractDateTimesYieldingYearMonthDuration</ace_lexicon:PN_sg>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.w3.org/2003/11/swrlb#subtractDates -->
+
+    <owl:NamedIndividual rdf:about="http://www.w3.org/2003/11/swrlb#subtractDates">
+        <swrlb:args rdf:datatype="http://www.w3.org/2001/XMLSchema#int">3</swrlb:args>
+        <ace_lexicon:PN_sg>subtractDates</ace_lexicon:PN_sg>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.w3.org/2003/11/swrlb#subtractDayTimeDurationFromDate -->
+
+    <owl:NamedIndividual rdf:about="http://www.w3.org/2003/11/swrlb#subtractDayTimeDurationFromDate">
+        <swrlb:args rdf:datatype="http://www.w3.org/2001/XMLSchema#int">3</swrlb:args>
+        <ace_lexicon:PN_sg>subtractDayTimeDurationFromDate</ace_lexicon:PN_sg>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.w3.org/2003/11/swrlb#subtractDayTimeDurationFromDateTime -->
+
+    <owl:NamedIndividual rdf:about="http://www.w3.org/2003/11/swrlb#subtractDayTimeDurationFromDateTime">
+        <swrlb:args rdf:datatype="http://www.w3.org/2001/XMLSchema#int">3</swrlb:args>
+        <ace_lexicon:PN_sg>subtractDayTimeDurationFromDateTime</ace_lexicon:PN_sg>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.w3.org/2003/11/swrlb#subtractDayTimeDurationFromTime -->
+
+    <owl:NamedIndividual rdf:about="http://www.w3.org/2003/11/swrlb#subtractDayTimeDurationFromTime">
+        <swrlb:args rdf:datatype="http://www.w3.org/2001/XMLSchema#int">3</swrlb:args>
+        <ace_lexicon:PN_sg>subtractDayTimeDurationFromTime</ace_lexicon:PN_sg>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.w3.org/2003/11/swrlb#subtractDayTimeDurations -->
+
+    <owl:NamedIndividual rdf:about="http://www.w3.org/2003/11/swrlb#subtractDayTimeDurations">
+        <swrlb:args rdf:datatype="http://www.w3.org/2001/XMLSchema#int">3</swrlb:args>
+        <ace_lexicon:PN_sg>subtractDayTimeDurations</ace_lexicon:PN_sg>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.w3.org/2003/11/swrlb#subtractTimes -->
+
+    <owl:NamedIndividual rdf:about="http://www.w3.org/2003/11/swrlb#subtractTimes">
+        <swrlb:args rdf:datatype="http://www.w3.org/2001/XMLSchema#int">3</swrlb:args>
+        <ace_lexicon:PN_sg>subtractTimes</ace_lexicon:PN_sg>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.w3.org/2003/11/swrlb#subtractYearMonthDurationFromDate -->
+
+    <owl:NamedIndividual rdf:about="http://www.w3.org/2003/11/swrlb#subtractYearMonthDurationFromDate">
+        <swrlb:args rdf:datatype="http://www.w3.org/2001/XMLSchema#int">3</swrlb:args>
+        <ace_lexicon:PN_sg>subtractYearMonthDurationFromDate</ace_lexicon:PN_sg>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.w3.org/2003/11/swrlb#subtractYearMonthDurationFromDateTime -->
+
+    <owl:NamedIndividual rdf:about="http://www.w3.org/2003/11/swrlb#subtractYearMonthDurationFromDateTime">
+        <swrlb:args rdf:datatype="http://www.w3.org/2001/XMLSchema#int">3</swrlb:args>
+        <ace_lexicon:PN_sg>subtractYearMonthDurationFromDateTime</ace_lexicon:PN_sg>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.w3.org/2003/11/swrlb#subtractYearMonthDurations -->
+
+    <owl:NamedIndividual rdf:about="http://www.w3.org/2003/11/swrlb#subtractYearMonthDurations">
+        <swrlb:args rdf:datatype="http://www.w3.org/2001/XMLSchema#int">3</swrlb:args>
+        <ace_lexicon:PN_sg>subtractYearMonthDurations</ace_lexicon:PN_sg>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.w3.org/2003/11/swrlb#tan -->
+
+    <owl:NamedIndividual rdf:about="http://www.w3.org/2003/11/swrlb#tan">
+        <swrlb:args rdf:datatype="http://www.w3.org/2001/XMLSchema#int">2</swrlb:args>
+        <ace_lexicon:PN_sg>tan</ace_lexicon:PN_sg>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.w3.org/2003/11/swrlb#time -->
+
+    <owl:NamedIndividual rdf:about="http://www.w3.org/2003/11/swrlb#time">
+        <swrlb:args rdf:datatype="http://www.w3.org/2001/XMLSchema#int">5</swrlb:args>
+        <ace_lexicon:PN_sg>time</ace_lexicon:PN_sg>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.w3.org/2003/11/swrlb#translate -->
+
+    <owl:NamedIndividual rdf:about="http://www.w3.org/2003/11/swrlb#translate">
+        <swrlb:args rdf:datatype="http://www.w3.org/2001/XMLSchema#int">4</swrlb:args>
+        <ace_lexicon:PN_sg>translate</ace_lexicon:PN_sg>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.w3.org/2003/11/swrlb#unaryMinus -->
+
+    <owl:NamedIndividual rdf:about="http://www.w3.org/2003/11/swrlb#unaryMinus">
+        <swrlb:args rdf:datatype="http://www.w3.org/2001/XMLSchema#int">2</swrlb:args>
+        <ace_lexicon:PN_sg>unaryMinus</ace_lexicon:PN_sg>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.w3.org/2003/11/swrlb#unaryPlus -->
+
+    <owl:NamedIndividual rdf:about="http://www.w3.org/2003/11/swrlb#unaryPlus">
+        <swrlb:args rdf:datatype="http://www.w3.org/2001/XMLSchema#int">2</swrlb:args>
+        <ace_lexicon:PN_sg>unaryPlus</ace_lexicon:PN_sg>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.w3.org/2003/11/swrlb#upperCase -->
+
+    <owl:NamedIndividual rdf:about="http://www.w3.org/2003/11/swrlb#upperCase">
+        <swrlb:args rdf:datatype="http://www.w3.org/2001/XMLSchema#int">2</swrlb:args>
+        <ace_lexicon:PN_sg>upperCase</ace_lexicon:PN_sg>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.w3.org/2003/11/swrlb#yearMonthDuration -->
+
+    <owl:NamedIndividual rdf:about="http://www.w3.org/2003/11/swrlb#yearMonthDuration">
+        <swrlb:args rdf:datatype="http://www.w3.org/2001/XMLSchema#int">3</swrlb:args>
+        <ace_lexicon:PN_sg>yearMonthDuration</ace_lexicon:PN_sg>
+    </owl:NamedIndividual>
+    <rdf:Description rdf:nodeID="genid94">
+        <swrl:argument1 rdf:resource="http://a.com/ontology#y"/>
+        <swrl:argument2 rdf:resource="http://a.com/ontology#z"/>
+        <swrl:propertyPredicate rdf:resource="http://a.com/ontology#hasSister"/>
+    </rdf:Description>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotations
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description rdf:about="http://a.com/ontology#Def-hasAunt">
+        <swrla:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrla:isRuleEnabled>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://a.com/ontology#Def-hasBrother">
+        <swrla:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrla:isRuleEnabled>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://a.com/ontology#Def-hasDaughter">
+        <swrla:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrla:isRuleEnabled>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://a.com/ontology#Def-hasFather">
+        <swrla:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrla:isRuleEnabled>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://a.com/ontology#Def-hasMother">
+        <swrla:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrla:isRuleEnabled>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://a.com/ontology#Def-hasNephew">
+        <swrla:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrla:isRuleEnabled>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://a.com/ontology#Def-hasNiece">
+        <swrla:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrla:isRuleEnabled>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://a.com/ontology#Def-hasParent">
+        <swrla:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrla:isRuleEnabled>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://a.com/ontology#Def-hasSibling">
+        <swrla:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrla:isRuleEnabled>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://a.com/ontology#Def-hasSister">
+        <swrla:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrla:isRuleEnabled>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://a.com/ontology#Def-hasSon">
+        <swrla:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrla:isRuleEnabled>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://a.com/ontology#Def-hasUncle">
+        <swrla:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrla:isRuleEnabled>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://a.com/ontology#hasSister">
+        <ace_lexicon:TV_sg>hasSisters</ace_lexicon:TV_sg>
+        <ace_lexicon:TV_vbg>hasSistered</ace_lexicon:TV_vbg>
+        <ace_lexicon:TV_pl>hasSister</ace_lexicon:TV_pl>
+        <ace_lexicon:PN_sg>hasSister</ace_lexicon:PN_sg>
+    </rdf:Description>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Rules
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description rdf:about="urn:swrl#y">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="urn:swrl#x">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="urn:swrl:var#x">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="urn:swrl:var#y">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="urn:swrl:var#z">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="urn:swrl#z">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="urn:swrl:var#x2">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="http://a.com/ontology#hasSibling"/>
+                        <swrl:argument1 rdf:resource="urn:swrl:var#x"/>
+                        <swrl:argument2 rdf:resource="urn:swrl:var#y"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                                <swrl:classPredicate rdf:resource="http://a.com/ontology#Man"/>
+                                <swrl:argument1 rdf:resource="urn:swrl:var#y"/>
+                            </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                    </rdf:Description>
+                </rdf:rest>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="http://a.com/ontology#hasBrother"/>
+                        <swrl:argument1 rdf:resource="urn:swrl:var#x"/>
+                        <swrl:argument2 rdf:resource="urn:swrl:var#y"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:head>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                        <swrl:classPredicate rdf:resource="http://a.com/ontology#Person"/>
+                        <swrl:argument1 rdf:resource="urn:swrl:var#x"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                <swrl:propertyPredicate rdf:resource="http://a.com/ontology#hasBrother"/>
+                                <swrl:argument1 rdf:resource="urn:swrl:var#x"/>
+                                <swrl:argument2 rdf:resource="urn:swrl:var#y"/>
+                            </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                <rdf:first>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                        <swrl:propertyPredicate rdf:resource="http://a.com/ontology#hasChild"/>
+                                        <swrl:argument1 rdf:resource="urn:swrl:var#y"/>
+                                        <swrl:argument2 rdf:resource="urn:swrl:var#z"/>
+                                    </rdf:Description>
+                                </rdf:first>
+                                <rdf:rest>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                        <rdf:first>
+                                            <rdf:Description>
+                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                                                <swrl:classPredicate rdf:resource="http://a.com/ontology#Man"/>
+                                                <swrl:argument1 rdf:resource="urn:swrl:var#z"/>
+                                            </rdf:Description>
+                                        </rdf:first>
+                                        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                    </rdf:Description>
+                                </rdf:rest>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </rdf:rest>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="http://a.com/ontology#hasNephew"/>
+                        <swrl:argument1 rdf:resource="urn:swrl:var#x"/>
+                        <swrl:argument2 rdf:resource="urn:swrl:var#z"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:head>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                        <swrl:classPredicate rdf:resource="http://a.com/ontology#Person"/>
+                        <swrl:argument1 rdf:resource="urn:swrl:var#x"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                <swrl:propertyPredicate rdf:resource="http://a.com/ontology#hasSister"/>
+                                <swrl:argument1 rdf:resource="urn:swrl:var#x"/>
+                                <swrl:argument2 rdf:resource="urn:swrl:var#y"/>
+                            </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                <rdf:first>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                        <swrl:propertyPredicate rdf:resource="http://a.com/ontology#hasChild"/>
+                                        <swrl:argument1 rdf:resource="urn:swrl:var#y"/>
+                                        <swrl:argument2 rdf:resource="urn:swrl:var#z"/>
+                                    </rdf:Description>
+                                </rdf:first>
+                                <rdf:rest>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                        <rdf:first>
+                                            <rdf:Description>
+                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                                                <swrl:classPredicate rdf:resource="http://a.com/ontology#Man"/>
+                                                <swrl:argument1 rdf:resource="urn:swrl:var#z"/>
+                                            </rdf:Description>
+                                        </rdf:first>
+                                        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                    </rdf:Description>
+                                </rdf:rest>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </rdf:rest>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="http://a.com/ontology#hasNephew"/>
+                        <swrl:argument1 rdf:resource="urn:swrl:var#x"/>
+                        <swrl:argument2 rdf:resource="urn:swrl:var#z"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:head>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                        <swrl:classPredicate rdf:resource="http://a.com/ontology#Person"/>
+                        <swrl:argument1 rdf:resource="urn:swrl#x"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                                <swrl:classPredicate rdf:resource="http://a.com/ontology#Woman"/>
+                                <swrl:argument1 rdf:resource="urn:swrl#y"/>
+                            </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                <rdf:first>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                        <swrl:propertyPredicate rdf:resource="http://a.com/ontology#hasChild"/>
+                                        <swrl:argument1 rdf:resource="urn:swrl#x"/>
+                                        <swrl:argument2 rdf:resource="urn:swrl#y"/>
+                                    </rdf:Description>
+                                </rdf:first>
+                                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </rdf:rest>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="http://a.com/ontology#hasDaughter"/>
+                        <swrl:argument1 rdf:resource="urn:swrl#x"/>
+                        <swrl:argument2 rdf:resource="urn:swrl#y"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:head>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                        <swrl:classPredicate rdf:resource="http://a.com/ontology#Person"/>
+                        <swrl:argument1 rdf:resource="urn:swrl#x"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                                <swrl:classPredicate rdf:resource="http://a.com/ontology#Woman"/>
+                                <swrl:argument1 rdf:resource="urn:swrl#y"/>
+                            </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                <rdf:first>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                        <swrl:propertyPredicate rdf:resource="http://a.com/ontology#hasParent"/>
+                                        <swrl:argument1 rdf:resource="urn:swrl#x"/>
+                                        <swrl:argument2 rdf:resource="urn:swrl#y"/>
+                                    </rdf:Description>
+                                </rdf:first>
+                                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </rdf:rest>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="http://a.com/ontology#hasMother"/>
+                        <swrl:argument1 rdf:resource="urn:swrl#x"/>
+                        <swrl:argument2 rdf:resource="urn:swrl#y"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:head>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                        <swrl:classPredicate rdf:resource="http://a.com/ontology#Person"/>
+                        <swrl:argument1 rdf:resource="urn:swrl#y"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                <swrl:propertyPredicate rdf:resource="http://a.com/ontology#hasChild"/>
+                                <swrl:argument1 rdf:resource="urn:swrl#y"/>
+                                <swrl:argument2 rdf:resource="urn:swrl#x"/>
+                            </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                <rdf:first>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                        <swrl:propertyPredicate rdf:resource="http://a.com/ontology#hasChild"/>
+                                        <swrl:argument1 rdf:resource="urn:swrl#y"/>
+                                        <swrl:argument2 rdf:resource="urn:swrl#z"/>
+                                    </rdf:Description>
+                                </rdf:first>
+                                <rdf:rest>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                        <rdf:first>
+                                            <rdf:Description>
+                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#DifferentIndividualsAtom"/>
+                                                <swrl:argument1 rdf:resource="urn:swrl#x"/>
+                                                <swrl:argument2 rdf:resource="urn:swrl#z"/>
+                                            </rdf:Description>
+                                        </rdf:first>
+                                        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                    </rdf:Description>
+                                </rdf:rest>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </rdf:rest>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="http://a.com/ontology#hasSibling"/>
+                        <swrl:argument1 rdf:resource="urn:swrl#x"/>
+                        <swrl:argument2 rdf:resource="urn:swrl#z"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:head>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                        <swrl:classPredicate rdf:resource="http://a.com/ontology#Person"/>
+                        <swrl:argument1 rdf:resource="urn:swrl#y"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                <swrl:propertyPredicate rdf:resource="http://a.com/ontology#hasConsort"/>
+                                <swrl:argument1 rdf:resource="urn:swrl#y"/>
+                                <swrl:argument2 rdf:resource="urn:swrl#z"/>
+                            </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                <rdf:first>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                        <swrl:propertyPredicate rdf:resource="http://a.com/ontology#hasParent"/>
+                                        <swrl:argument1 rdf:resource="urn:swrl#x"/>
+                                        <swrl:argument2 rdf:resource="urn:swrl#y"/>
+                                    </rdf:Description>
+                                </rdf:first>
+                                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </rdf:rest>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="http://a.com/ontology#hasParent"/>
+                        <swrl:argument1 rdf:resource="urn:swrl#x"/>
+                        <swrl:argument2 rdf:resource="urn:swrl#z"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:head>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                        <swrl:classPredicate rdf:resource="http://a.com/ontology#Person"/>
+                        <swrl:argument1 rdf:resource="urn:swrl:var#x"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                <swrl:propertyPredicate rdf:resource="http://a.com/ontology#hasBrother"/>
+                                <swrl:argument1 rdf:resource="urn:swrl:var#x"/>
+                                <swrl:argument2 rdf:resource="urn:swrl:var#y"/>
+                            </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                <rdf:first>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                        <swrl:propertyPredicate rdf:resource="http://a.com/ontology#hasChild"/>
+                                        <swrl:argument1 rdf:resource="urn:swrl:var#y"/>
+                                        <swrl:argument2 rdf:resource="urn:swrl:var#z"/>
+                                    </rdf:Description>
+                                </rdf:first>
+                                <rdf:rest>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                        <rdf:first>
+                                            <rdf:Description>
+                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                                                <swrl:classPredicate rdf:resource="http://a.com/ontology#Woman"/>
+                                                <swrl:argument1 rdf:resource="urn:swrl:var#z"/>
+                                            </rdf:Description>
+                                        </rdf:first>
+                                        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                    </rdf:Description>
+                                </rdf:rest>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </rdf:rest>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="http://a.com/ontology#hasNiece"/>
+                        <swrl:argument1 rdf:resource="urn:swrl:var#x"/>
+                        <swrl:argument2 rdf:resource="urn:swrl:var#z"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:head>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                        <swrl:classPredicate rdf:resource="http://a.com/ontology#Person"/>
+                        <swrl:argument1 rdf:resource="urn:swrl:var#x"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                <swrl:propertyPredicate rdf:resource="http://a.com/ontology#hasSister"/>
+                                <swrl:argument1 rdf:resource="urn:swrl:var#x"/>
+                                <swrl:argument2 rdf:resource="urn:swrl:var#y"/>
+                            </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                <rdf:first>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                        <swrl:propertyPredicate rdf:resource="http://a.com/ontology#hasChild"/>
+                                        <swrl:argument1 rdf:resource="urn:swrl:var#y"/>
+                                        <swrl:argument2 rdf:resource="urn:swrl:var#z"/>
+                                    </rdf:Description>
+                                </rdf:first>
+                                <rdf:rest>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                        <rdf:first>
+                                            <rdf:Description>
+                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                                                <swrl:classPredicate rdf:resource="http://a.com/ontology#Woman"/>
+                                                <swrl:argument1 rdf:resource="urn:swrl:var#z"/>
+                                            </rdf:Description>
+                                        </rdf:first>
+                                        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                    </rdf:Description>
+                                </rdf:rest>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </rdf:rest>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="http://a.com/ontology#hasNiece"/>
+                        <swrl:argument1 rdf:resource="urn:swrl:var#x"/>
+                        <swrl:argument2 rdf:resource="urn:swrl:var#z"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:head>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                        <swrl:classPredicate rdf:resource="http://a.com/ontology#Person"/>
+                        <swrl:argument1 rdf:resource="urn:swrl:var#x"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                <swrl:propertyPredicate rdf:resource="http://a.com/ontology#hasParent"/>
+                                <swrl:argument1 rdf:resource="urn:swrl:var#x"/>
+                                <swrl:argument2 rdf:resource="urn:swrl:var#y"/>
+                            </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                <rdf:first>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                        <swrl:propertyPredicate rdf:resource="http://a.com/ontology#hasBrother"/>
+                                        <swrl:argument1 rdf:resource="urn:swrl:var#y"/>
+                                        <swrl:argument2 rdf:resource="urn:swrl:var#z"/>
+                                    </rdf:Description>
+                                </rdf:first>
+                                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </rdf:rest>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="http://a.com/ontology#hasUncle"/>
+                        <swrl:argument1 rdf:resource="urn:swrl:var#x"/>
+                        <swrl:argument2 rdf:resource="urn:swrl:var#z"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:head>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                        <swrl:classPredicate rdf:resource="http://a.com/ontology#Person"/>
+                        <swrl:argument1 rdf:resource="urn:swrl:var#x"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                <swrl:propertyPredicate rdf:resource="http://a.com/ontology#hasParent"/>
+                                <swrl:argument1 rdf:resource="urn:swrl:var#x"/>
+                                <swrl:argument2 rdf:resource="urn:swrl:var#y"/>
+                            </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                <rdf:first>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                        <swrl:propertyPredicate rdf:resource="http://a.com/ontology#hasSibling"/>
+                                        <swrl:argument1 rdf:resource="urn:swrl:var#y"/>
+                                        <swrl:argument2 rdf:resource="urn:swrl:var#z"/>
+                                    </rdf:Description>
+                                </rdf:first>
+                                <rdf:rest>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                        <rdf:first>
+                                            <rdf:Description>
+                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                                <swrl:propertyPredicate rdf:resource="http://a.com/ontology#hasChild"/>
+                                                <swrl:argument1 rdf:resource="urn:swrl:var#z"/>
+                                                <swrl:argument2 rdf:resource="urn:swrl:var#x2"/>
+                                            </rdf:Description>
+                                        </rdf:first>
+                                        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                    </rdf:Description>
+                                </rdf:rest>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </rdf:rest>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="http://a.com/ontology#hasCousin"/>
+                        <swrl:argument1 rdf:resource="urn:swrl:var#x"/>
+                        <swrl:argument2 rdf:resource="urn:swrl:var#x2"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:head>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                        <swrl:classPredicate rdf:resource="http://a.com/ontology#Person"/>
+                        <swrl:argument1 rdf:resource="urn:swrl:var#x"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                <swrl:propertyPredicate rdf:resource="http://a.com/ontology#hasGrandparent"/>
+                                <swrl:argument1 rdf:resource="urn:swrl:var#x"/>
+                                <swrl:argument2 rdf:resource="urn:swrl:var#y"/>
+                            </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                <rdf:first>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                        <swrl:propertyPredicate rdf:resource="http://a.com/ontology#hasFather"/>
+                                        <swrl:argument1 rdf:resource="urn:swrl:var#y"/>
+                                        <swrl:argument2 rdf:resource="urn:swrl:var#z"/>
+                                    </rdf:Description>
+                                </rdf:first>
+                                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </rdf:rest>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="http://a.com/ontology#hasGreatgrandfather"/>
+                        <swrl:argument1 rdf:resource="urn:swrl:var#x"/>
+                        <swrl:argument2 rdf:resource="urn:swrl:var#z"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:head>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                        <swrl:classPredicate rdf:resource="http://a.com/ontology#Person"/>
+                        <swrl:argument1 rdf:resource="urn:swrl:var#x"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                <swrl:propertyPredicate rdf:resource="http://a.com/ontology#hasParent"/>
+                                <swrl:argument1 rdf:resource="urn:swrl:var#x"/>
+                                <swrl:argument2 rdf:resource="urn:swrl:var#y"/>
+                            </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                <rdf:first>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                        <swrl:propertyPredicate rdf:resource="http://a.com/ontology#hasFather"/>
+                                        <swrl:argument1 rdf:resource="urn:swrl:var#y"/>
+                                        <swrl:argument2 rdf:resource="urn:swrl:var#z"/>
+                                    </rdf:Description>
+                                </rdf:first>
+                                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </rdf:rest>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="http://a.com/ontology#hasGrandfather"/>
+                        <swrl:argument1 rdf:resource="urn:swrl:var#x"/>
+                        <swrl:argument2 rdf:resource="urn:swrl:var#z"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:head>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                        <swrl:classPredicate rdf:resource="http://a.com/ontology#Person"/>
+                        <swrl:argument1 rdf:resource="urn:swrl:var#x"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                <swrl:propertyPredicate rdf:resource="http://a.com/ontology#hasGrandparent"/>
+                                <swrl:argument1 rdf:resource="urn:swrl:var#x"/>
+                                <swrl:argument2 rdf:resource="urn:swrl:var#y"/>
+                            </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                <rdf:first>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                        <swrl:propertyPredicate rdf:resource="http://a.com/ontology#hasMother"/>
+                                        <swrl:argument1 rdf:resource="urn:swrl:var#y"/>
+                                        <swrl:argument2 rdf:resource="urn:swrl:var#z"/>
+                                    </rdf:Description>
+                                </rdf:first>
+                                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </rdf:rest>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="http://a.com/ontology#hasGreatgrandmother"/>
+                        <swrl:argument1 rdf:resource="urn:swrl:var#x"/>
+                        <swrl:argument2 rdf:resource="urn:swrl:var#z"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:head>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                        <swrl:classPredicate rdf:resource="http://a.com/ontology#Person"/>
+                        <swrl:argument1 rdf:resource="urn:swrl:var#x"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                <swrl:propertyPredicate rdf:resource="http://a.com/ontology#hasParent"/>
+                                <swrl:argument1 rdf:resource="urn:swrl:var#x"/>
+                                <swrl:argument2 rdf:resource="urn:swrl:var#y"/>
+                            </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                <rdf:first>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                        <swrl:propertyPredicate rdf:resource="http://a.com/ontology#hasMother"/>
+                                        <swrl:argument1 rdf:resource="urn:swrl:var#y"/>
+                                        <swrl:argument2 rdf:resource="urn:swrl:var#z"/>
+                                    </rdf:Description>
+                                </rdf:first>
+                                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </rdf:rest>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="http://a.com/ontology#hasGrandmother"/>
+                        <swrl:argument1 rdf:resource="urn:swrl:var#x"/>
+                        <swrl:argument2 rdf:resource="urn:swrl:var#z"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:head>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="http://a.com/ontology#hasSibling"/>
+                        <swrl:argument1 rdf:resource="urn:swrl:var#x"/>
+                        <swrl:argument2 rdf:resource="urn:swrl:var#y"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                                <swrl:classPredicate rdf:resource="http://a.com/ontology#Woman"/>
+                                <swrl:argument1 rdf:resource="urn:swrl:var#y"/>
+                            </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                    </rdf:Description>
+                </rdf:rest>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="http://a.com/ontology#hasSister"/>
+                        <swrl:argument1 rdf:resource="urn:swrl:var#x"/>
+                        <swrl:argument2 rdf:resource="urn:swrl:var#y"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:head>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                        <swrl:classPredicate rdf:resource="http://a.com/ontology#Man"/>
+                        <swrl:argument1 rdf:resource="urn:swrl#y"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                                <swrl:classPredicate rdf:resource="http://a.com/ontology#Person"/>
+                                <swrl:argument1 rdf:resource="urn:swrl#x"/>
+                            </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                <rdf:first>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                        <swrl:propertyPredicate rdf:resource="http://a.com/ontology#hasParent"/>
+                                        <swrl:argument1 rdf:resource="urn:swrl#x"/>
+                                        <swrl:argument2 rdf:resource="urn:swrl#y"/>
+                                    </rdf:Description>
+                                </rdf:first>
+                                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </rdf:rest>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="http://a.com/ontology#hasFather"/>
+                        <swrl:argument1 rdf:resource="urn:swrl#x"/>
+                        <swrl:argument2 rdf:resource="urn:swrl#y"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:head>
+    </rdf:Description>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi -->
+

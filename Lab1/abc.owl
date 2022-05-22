@@ -1,0 +1,457 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://example.com/myOntology#"
+     xml:base="http://example.com/myOntology"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+    <owl:Ontology rdf:about="http://example.com/myOntology"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://example.com/myOntology#hasActor -->
+
+    <owl:ObjectProperty rdf:about="http://example.com/myOntology#hasActor">
+        <owl:inverseOf rdf:resource="http://example.com/myOntology#isActorIn"/>
+        <rdfs:domain rdf:resource="http://example.com/myOntology#Movie"/>
+        <rdfs:range rdf:resource="http://example.com/myOntology#Actor"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://example.com/myOntology#hasActress -->
+
+    <owl:ObjectProperty rdf:about="http://example.com/myOntology#hasActress">
+        <rdfs:subPropertyOf rdf:resource="http://example.com/myOntology#hasActor"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://example.com/myOntology#hasDirector -->
+
+    <owl:ObjectProperty rdf:about="http://example.com/myOntology#hasDirector">
+        <owl:inverseOf rdf:resource="http://example.com/myOntology#isDirectorIn"/>
+        <rdfs:domain rdf:resource="http://example.com/myOntology#Movie"/>
+        <rdfs:range rdf:resource="http://example.com/myOntology#Director"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://example.com/myOntology#hasMaleActor -->
+
+    <owl:ObjectProperty rdf:about="http://example.com/myOntology#hasMaleActor">
+        <rdfs:subPropertyOf rdf:resource="http://example.com/myOntology#hasActor"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://example.com/myOntology#hasSex -->
+
+    <owl:ObjectProperty rdf:about="http://example.com/myOntology#hasSex"/>
+    
+
+
+    <!-- http://example.com/myOntology#isActorIn -->
+
+    <owl:ObjectProperty rdf:about="http://example.com/myOntology#isActorIn">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://example.com/myOntology#isDirectorIn -->
+
+    <owl:ObjectProperty rdf:about="http://example.com/myOntology#isDirectorIn">
+        <rdfs:domain rdf:resource="http://example.com/myOntology#Director"/>
+        <rdfs:range rdf:resource="http://example.com/myOntology#Movie"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://example.com/myOntology#likeEachOther -->
+
+    <owl:ObjectProperty rdf:about="http://example.com/myOntology#likeEachOther">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#SymmetricProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://example.com/myOntology#hasAge -->
+
+    <owl:DatatypeProperty rdf:about="http://example.com/myOntology#hasAge">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://example.com/myOntology#Person"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://example.com/myOntology#hasName -->
+
+    <owl:DatatypeProperty rdf:about="http://example.com/myOntology#hasName">
+        <rdfs:domain rdf:resource="http://example.com/myOntology#Person"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://example.com/myOntology#hasTitle -->
+
+    <owl:DatatypeProperty rdf:about="http://example.com/myOntology#hasTitle">
+        <rdfs:domain rdf:resource="http://example.com/myOntology#Art"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://example.com/myOntology#producedInYear -->
+
+    <owl:DatatypeProperty rdf:about="http://example.com/myOntology#producedInYear">
+        <rdfs:domain rdf:resource="http://example.com/myOntology#Art"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://example.com/myOntology#Actor -->
+
+    <owl:Class rdf:about="http://example.com/myOntology#Actor">
+        <rdfs:subClassOf rdf:resource="http://example.com/myOntology#Person"/>
+    </owl:Class>
+    
+
+
+    <!-- http://example.com/myOntology#Art -->
+
+    <owl:Class rdf:about="http://example.com/myOntology#Art"/>
+    
+
+
+    <!-- http://example.com/myOntology#Director -->
+
+    <owl:Class rdf:about="http://example.com/myOntology#Director">
+        <rdfs:subClassOf rdf:resource="http://example.com/myOntology#Person"/>
+    </owl:Class>
+    
+
+
+    <!-- http://example.com/myOntology#Gender -->
+
+    <owl:Class rdf:about="http://example.com/myOntology#Gender"/>
+    
+
+
+    <!-- http://example.com/myOntology#Movie -->
+
+    <owl:Class rdf:about="http://example.com/myOntology#Movie">
+        <rdfs:subClassOf rdf:resource="http://example.com/myOntology#Art"/>
+    </owl:Class>
+    
+
+
+    <!-- http://example.com/myOntology#Person -->
+
+    <owl:Class rdf:about="http://example.com/myOntology#Person"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://example.com/myOntology#Female -->
+
+    <owl:NamedIndividual rdf:about="http://example.com/myOntology#Female">
+        <rdf:type rdf:resource="http://example.com/myOntology#Gender"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.com/myOntology#Male -->
+
+    <owl:NamedIndividual rdf:about="http://example.com/myOntology#Male">
+        <rdf:type rdf:resource="http://example.com/myOntology#Gender"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.com/myOntology#nm0000136 -->
+
+    <owl:NamedIndividual rdf:about="http://example.com/myOntology#nm0000136">
+        <rdf:type rdf:resource="http://example.com/myOntology#Actor"/>
+        <hasSex rdf:resource="http://example.com/myOntology#Male"/>
+        <isActorIn rdf:resource="http://example.com/myOntology#tt0325980"/>
+        <hasAge rdf:datatype="http://www.w3.org/2001/XMLSchema#int">58</hasAge>
+        <hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Johnny Depp</hasName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.com/myOntology#nm0000353 -->
+
+    <owl:NamedIndividual rdf:about="http://example.com/myOntology#nm0000353">
+        <rdf:type rdf:resource="http://example.com/myOntology#Actor"/>
+        <hasSex rdf:resource="http://example.com/myOntology#Male"/>
+        <hasAge rdf:datatype="http://www.w3.org/2001/XMLSchema#int">66</hasAge>
+        <hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Willem Dafoe</hasName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.com/myOntology#nm0000463 -->
+
+    <owl:NamedIndividual rdf:about="http://example.com/myOntology#nm0000463">
+        <rdf:type rdf:resource="http://example.com/myOntology#Actor"/>
+        <hasSex rdf:resource="http://example.com/myOntology#Female"/>
+        <hasAge rdf:datatype="http://www.w3.org/2001/XMLSchema#int">57</hasAge>
+        <hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Famke Janssen</hasName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.com/myOntology#nm0000719 -->
+
+    <owl:NamedIndividual rdf:about="http://example.com/myOntology#nm0000719">
+        <rdf:type rdf:resource="http://example.com/myOntology#Actor"/>
+        <hasSex rdf:resource="http://example.com/myOntology#Male"/>
+        <hasAge rdf:datatype="http://www.w3.org/2001/XMLSchema#int">82</hasAge>
+        <hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">F. Murray Abraham</hasName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.com/myOntology#nm0001122 -->
+
+    <owl:NamedIndividual rdf:about="http://example.com/myOntology#nm0001122">
+        <rdf:type rdf:resource="http://example.com/myOntology#Actor"/>
+        <hasSex rdf:resource="http://example.com/myOntology#Female"/>
+        <hasAge rdf:datatype="http://www.w3.org/2001/XMLSchema#int">64</hasAge>
+        <hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Ellen DeGeneres</hasName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.com/myOntology#nm0001232 -->
+
+    <owl:NamedIndividual rdf:about="http://example.com/myOntology#nm0001232">
+        <rdf:type rdf:resource="http://example.com/myOntology#Director"/>
+        <hasSex rdf:resource="http://example.com/myOntology#Male"/>
+        <hasAge rdf:datatype="http://www.w3.org/2001/XMLSchema#int">86</hasAge>
+        <hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Milos Forman</hasName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.com/myOntology#nm0001371 -->
+
+    <owl:NamedIndividual rdf:about="http://example.com/myOntology#nm0001371">
+        <rdf:type rdf:resource="http://example.com/myOntology#Actor"/>
+        <hasSex rdf:resource="http://example.com/myOntology#Male"/>
+        <hasAge rdf:datatype="http://www.w3.org/2001/XMLSchema#int">69</hasAge>
+        <hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Tom Hulce</hasName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.com/myOntology#nm0001691 -->
+
+    <owl:NamedIndividual rdf:about="http://example.com/myOntology#nm0001691">
+        <rdf:type rdf:resource="http://example.com/myOntology#Actor"/>
+        <hasSex rdf:resource="http://example.com/myOntology#Male"/>
+        <isActorIn rdf:resource="http://example.com/myOntology#tt0325980"/>
+        <hasAge rdf:datatype="http://www.w3.org/2001/XMLSchema#int">71</hasAge>
+        <hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Geoffrey Rush</hasName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.com/myOntology#nm0001741 -->
+
+    <owl:NamedIndividual rdf:about="http://example.com/myOntology#nm0001741">
+        <rdf:type rdf:resource="http://example.com/myOntology#Director"/>
+        <hasSex rdf:resource="http://example.com/myOntology#Male"/>
+        <hasAge rdf:datatype="http://www.w3.org/2001/XMLSchema#int">56</hasAge>
+        <hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Bryan Singer</hasName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.com/myOntology#nm0004056 -->
+
+    <owl:NamedIndividual rdf:about="http://example.com/myOntology#nm0004056">
+        <rdf:type rdf:resource="http://example.com/myOntology#Director"/>
+        <hasSex rdf:resource="http://example.com/myOntology#Male"/>
+        <isDirectorIn rdf:resource="http://example.com/myOntology#tt0266543"/>
+        <hasAge rdf:datatype="http://www.w3.org/2001/XMLSchema#int">56</hasAge>
+        <hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Andrew Stanton</hasName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.com/myOntology#nm0004303 -->
+
+    <owl:NamedIndividual rdf:about="http://example.com/myOntology#nm0004303">
+        <rdf:type rdf:resource="http://example.com/myOntology#Director"/>
+        <hasSex rdf:resource="http://example.com/myOntology#Male"/>
+        <isDirectorIn rdf:resource="http://example.com/myOntology#tt0458525"/>
+        <likeEachOther rdf:resource="http://example.com/myOntology#nm0000353"/>
+        <hasAge rdf:datatype="http://www.w3.org/2001/XMLSchema#int">58</hasAge>
+        <hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Gavin Hood</hasName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.com/myOntology#nm0413168 -->
+
+    <owl:NamedIndividual rdf:about="http://example.com/myOntology#nm0413168">
+        <rdf:type rdf:resource="http://example.com/myOntology#Actor"/>
+        <hasSex rdf:resource="http://example.com/myOntology#Male"/>
+        <hasAge rdf:datatype="http://www.w3.org/2001/XMLSchema#int">53</hasAge>
+        <hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Hugh Jackman</hasName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.com/myOntology#nm0881279 -->
+
+    <owl:NamedIndividual rdf:about="http://example.com/myOntology#nm0881279">
+        <rdf:type rdf:resource="http://example.com/myOntology#Director"/>
+        <hasSex rdf:resource="http://example.com/myOntology#Male"/>
+        <isDirectorIn rdf:resource="http://example.com/myOntology#tt0266543"/>
+        <likeEachOther rdf:resource="http://example.com/myOntology#nm0004056"/>
+        <hasAge rdf:datatype="http://www.w3.org/2001/XMLSchema#int">54</hasAge>
+        <hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Lee Unkrich</hasName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.com/myOntology#nm0893659 -->
+
+    <owl:NamedIndividual rdf:about="http://example.com/myOntology#nm0893659">
+        <rdf:type rdf:resource="http://example.com/myOntology#Director"/>
+        <hasSex rdf:resource="http://example.com/myOntology#Male"/>
+        <hasAge rdf:datatype="http://www.w3.org/2001/XMLSchema#int">58</hasAge>
+        <hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Gore Verbinsky</hasName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.com/myOntology#tt0086879 -->
+
+    <owl:NamedIndividual rdf:about="http://example.com/myOntology#tt0086879">
+        <rdf:type rdf:resource="http://example.com/myOntology#Movie"/>
+        <hasDirector rdf:resource="http://example.com/myOntology#nm0001232"/>
+        <hasMaleActor rdf:resource="http://example.com/myOntology#nm0000719"/>
+        <hasMaleActor rdf:resource="http://example.com/myOntology#nm0001371"/>
+        <hasTitle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Amadeus</hasTitle>
+        <producedInYear rdf:datatype="http://www.w3.org/2001/XMLSchema#int">1984</producedInYear>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.com/myOntology#tt0120903 -->
+
+    <owl:NamedIndividual rdf:about="http://example.com/myOntology#tt0120903">
+        <rdf:type rdf:resource="http://example.com/myOntology#Movie"/>
+        <hasActress rdf:resource="http://example.com/myOntology#nm0000463"/>
+        <hasDirector rdf:resource="http://example.com/myOntology#nm0001741"/>
+        <hasMaleActor rdf:resource="http://example.com/myOntology#nm0413168"/>
+        <hasTitle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">X-Men</hasTitle>
+        <producedInYear rdf:datatype="http://www.w3.org/2001/XMLSchema#int">2000</producedInYear>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.com/myOntology#tt0266543 -->
+
+    <owl:NamedIndividual rdf:about="http://example.com/myOntology#tt0266543">
+        <rdf:type rdf:resource="http://example.com/myOntology#Movie"/>
+        <hasActress rdf:resource="http://example.com/myOntology#nm0001122"/>
+        <hasMaleActor rdf:resource="http://example.com/myOntology#nm0000353"/>
+        <hasTitle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Finding Nemo</hasTitle>
+        <producedInYear rdf:datatype="http://www.w3.org/2001/XMLSchema#int">2003</producedInYear>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.com/myOntology#tt0325980 -->
+
+    <owl:NamedIndividual rdf:about="http://example.com/myOntology#tt0325980">
+        <rdf:type rdf:resource="http://example.com/myOntology#Movie"/>
+        <hasDirector rdf:resource="http://example.com/myOntology#nm0893659"/>
+        <hasTitle rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Pirates of the Caribbean: The Curse of the Black Pearl</hasTitle>
+        <producedInYear rdf:datatype="http://www.w3.org/2001/XMLSchema#int">2003</producedInYear>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://example.com/myOntology#tt0458525 -->
+
+    <owl:NamedIndividual rdf:about="http://example.com/myOntology#tt0458525">
+        <rdf:type rdf:resource="http://example.com/myOntology#Movie"/>
+        <hasMaleActor rdf:resource="http://example.com/myOntology#nm0413168"/>
+        <hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">X-Men Origins: Wolverine</hasName>
+        <producedInYear rdf:datatype="http://www.w3.org/2001/XMLSchema#int">2009</producedInYear>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // General axioms
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDifferent"/>
+        <owl:distinctMembers rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://example.com/myOntology#Female"/>
+            <rdf:Description rdf:about="http://example.com/myOntology#Male"/>
+        </owl:distinctMembers>
+    </rdf:Description>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi -->
+

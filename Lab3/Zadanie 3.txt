@@ -1,0 +1,39 @@
+i. Znajdź osoby urodzone w Poznaniu.
+
+select ?x where {?x <http://dbpedia.org/ontology/birthPlace><http://dbpedia.org/resource/Poznań>} LIMIT 100
+
+ii. Znajdź piosenkarki/piosenkarzy urodzonych w Poznaniu i przedstaw ich posortowanych rosnąco wg nazwy. Czy wyniki pokrywają się z wynikami poprzedniego zapytania?
+
+select distinct ?artist {
+?artist dbo:background "solo_singer".
+?artist dbo:birthPlace dbr:Poznań .
+}
+Order by ?artist LIMIT 100
+
+iii. Znajdź wszystkie polskie piosenkarki. Czy widzisz jakieś braki/błędy (szczególnie w porównaniu do wyników poprzednich zapytań)?
+
+select distinct ?artist {
+?artist dct:subject dbc:Polish_women_singers .
+?artist dbo:birthPlace dbr:Poland .
+}
+Order by ?artist LIMIT 100
+
+iv. Znajdź album/albumy polskich piosenkarek, które mają w tytule litery „SE”.
+
+select distinct ?musician ?album {
+?musician dbo:birthPlace dbr:Poland .
+?album a dbo:Album ; dbp:name ?albumname . FILTER( regex(?albumname, "se"))
+?album dbp:artist ?musician .
+}
+Order by ?musician LIMIT 100
+
+v. Znajdź wszystkich muzyków urodzonych w Warszawie.
+
+select distinct ?musician {
+?musician a dbo:MusicalArtist .
+?musician dbo:birthPlace dbr:Warsaw .
+}
+Order by ?musician LIMIT 100
+
+vi. Znajdź wszystkich muzyków urodzonych w Warszawie, których ojciec ma na imię Stanisław.
+

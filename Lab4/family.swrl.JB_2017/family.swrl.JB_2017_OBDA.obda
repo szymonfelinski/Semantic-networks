@@ -1,0 +1,61 @@
+[PrefixDeclaration]
+:		http://a.com/ontology#
+owl:		http://www.w3.org/2002/07/owl#
+rdf:		http://www.w3.org/1999/02/22-rdf-syntax-ns#
+xml:		http://www.w3.org/XML/1998/namespace
+xsd:		http://www.w3.org/2001/XMLSchema#
+abox:		http://swrl.stanford.edu/ontologies/built-ins/3.3/abox.owl#
+rdfs:		http://www.w3.org/2000/01/rdf-schema#
+swrl:		http://www.w3.org/2003/11/swrl#
+tbox:		http://swrl.stanford.edu/ontologies/built-ins/3.3/tbox.owl#
+query:		http://swrl.stanford.edu/ontologies/built-ins/3.3/query.owl#
+swlrx:		http://swrl.stanford.edu/ontologies/built-ins/3.3/swrlx.owl#
+swrla:		http://swrl.stanford.edu/ontologies/3.3/swrla.owl#
+swrlb:		http://www.w3.org/2003/11/swrlb#
+temporal:	http://swrl.stanford.edu/ontologies/built-ins/3.3/temporal.owl#
+ace_lexicon:	http://attempto.ifi.uzh.ch/ace_lexicon#
+
+[MappingDeclaration] @collection [[
+mappingId	zad3-0
+target		:Persons_SF/{ID} a :Person . 
+source		Select * from "Person"
+
+mappingId	zad3-2
+target		:Persons_SF/{ID} a :Woman . 
+source		SELECT * FROM "Person" 
+			WHERE "SEX" = 'Female'
+
+mappingId	zad3-1
+target		:Persons_SF/{ID} a :Man . 
+source		SELECT * FROM "Person" 
+			WHERE "SEX" = 'Male'
+
+mappingId	zad3-3
+target		:Persons_SF/{ID} :hasMother :Persons_SF/{MOM_ID} . 
+source		Select * from "Person"
+
+mappingId	zad3-4
+target		:Persons_SF/{ID} :hasFather :Persons_SF/{DAD_ID} . 
+source		Select * from "Person"
+
+mappingId	zad3-5
+target		:Persons_SF/{PERSON_ID} :hasSister :Persons_SF/{SISTER_ID} . 
+source		SELECT * FROM "hasSister"
+
+mappingId	zad3-6
+target		:Persons_SF/{PERSON_ID} :hasBrother :Persons_SF/{BROTHER_ID} . 
+source		SELECT * FROM "hasBrother"
+
+mappingId	zad3-7
+target		:Persons_SF/{ID} :hasName {NAME} . 
+source		SELECT * FROM "Person"
+
+mappingId	zad4-1
+target		:Persons_SF/{CHILD_ID} :hasGrandfather :Persons_SF/{GRANDPARENT_ID} . 
+source		select * from grandfather_relation
+
+mappingId	zad3-1(0)
+target		:Persons_SF/{ID} :hasSex :Persons_SF/{SEX} . 
+source		SELECT * FROM "Person"
+]]
+
